@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Resultado da Consulta de Notas Fiscais";
+}
+
+@model NotasFiscaisService.RetornarDadosNotaFiscal
+
+
+<style>
+    body {
+        background-color: skyblue;
+        font-family: Gadugi;
+    }
+    h1 {
+        color: whitesmoke;
+        font-family: 'Courier New';
+        font-weight: 800;
+        text-align: center;
+        margin: 30px 0px 30px 0;
+        text-align: center;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 800px;
+        margin: 0 auto;
+        background-color: #E6F0F5;
+        border-radius: 10px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    th {
+        background-color: #0360AB;
+        color: #FFFFFF;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F2F9FF;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #D5EAF7;
+    }
+</style>
+
+@if (Model != null)
+{
+    <h1>Resultado da Consulta detalhada de Notas Fiscais e Seus Itens</h1>
+
+    <table>
+        <tr>
+            <th>Número (ID) do Produto cadastrado</th>
+            <th>Número da Ata</th>
+            <th>Simples Remessa?</th>
+            <th>Número da OF</th>
+            <th>Nome do Arquivo XML Enviado</th>
+            <th>Nome do Arquivo PDF Enviado</th>
+            <th>Valor Total informado da NF-e</th>
+            <th>Data da Inclusão na Base de Dados (à partir de 2019)</th>
+        </tr>
+
+        <tr>
+             <td>@Model.NumeroChaveNotaFiscal</td>
+             <td>@Model.NumeroChaveNotaFiscalPai</td>
+             <td>@Model.IsSimplesRemessa</td>
+             <td>@Model.NumeroOSOF</td>
+             <td>@Model.XmlCaminho</td>
+             <td>@Model.PdfRecidoNF</td>
+             <td>@Model.ValorTotal</td>
+             <td>@Model.DataInclusao</td>
+        </tr>
+    </table>
+}
+else
+{
+    <p>Nenhum resultado encontrado.</p>
+}

@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Resultado do Upload do XML - NF-e ou Simples Remessa";
+}
+
+@model NotasFiscaisService.Confirmation
+
+
+
+<style>
+    body {
+        background-color: skyblue;
+        font-family: Gadugi;
+    }
+
+    h1 {
+        text-shadow: 2px 2px 4px #000000;
+        color: whitesmoke;
+        font-family: 'Courier New';
+        font-weight: 800;
+        text-align: center;
+        margin: 30px 0px 30px 0;
+        text-align: center;
+    }
+
+    .table-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 800px;
+        background-color: #E6F0F5;
+        border-radius: 10px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    th {
+        background-color: #0360AB;
+        color: #FFFFFF;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F2F9FF;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #D5EAF7;
+    }
+</style>
+
+
+
+<h1>Resultado do Upload do XML - NF-e ou Simples Remessa</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Situação</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.SituacaoRetorno</td>
+            <td>@Model.Status</td>
+        </tr>
+    </tbody>
+</table>

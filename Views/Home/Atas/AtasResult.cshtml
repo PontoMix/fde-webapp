@@ -1,0 +1,108 @@
+﻿@{
+    ViewData["Title"] = "Resultado da Pesquisa de Ata";
+}
+
+@model AtasService.AtaDados[]
+
+<style>
+    body {
+        background-color: skyblue;
+        font-family: Gadugi;
+    }
+
+    #numberAndYearAta {
+        margin: 0 auto;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 800px;
+        margin: 0 auto;
+        background-color: #E6F0F5;
+        border-radius: 10px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    th {
+        background-color: #0360AB;
+        color: #FFFFFF;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F2F9FF;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #D5EAF7;
+    }
+
+    form#form_pesquisa_itens{
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+     button.btn-primary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+</style>
+
+@if (Model != null && Model.Length > 0)
+{
+
+    <div id="numberAndYearAta">
+        <h5>Número da Ata: @ViewBag.NumeroAta</h5><br />
+        <h5>Número do Ano: @ViewBag.NumeroAno</h5><br />
+    </div>
+
+    <form id="form_pesquisa_itens" method="post" action="/Home/PesquisarItensAta">
+        <input type="hidden" name="numeroAta" value="@ViewBag.NumeroAta" />
+        <input type="hidden" name="numeroAno" value="@ViewBag.NumeroAno" />
+        <button type="submit" class="btn btn-primary" style="width: 25%;">Pesquisar Itens</button>
+    </form>
+
+    <table>
+        <tr>
+            <th>Número da Ata</th>
+            <th>Número do Ano</th>
+            <th>Número do Polo</th>
+            <th>Data Inicial Vigente</th>
+            <th>Data Final Vigente</th>
+            <th>Nome da Ata</th>
+            <th>Descrição da Ata</th>
+            <th>Status da Ata</th>
+            <th>Mensagem</th>
+            <th>Descrição do Status da Ata</th>
+        </tr>
+        @foreach (var ata in Model)
+        {
+            <tr>
+                <td>@ata.NumeroAta</td>
+                <td>@ata.NumeroAno</td>
+                <td>@ata.NumeroPolo</td>
+                <td>@ata.DataInicialVigencia</td>
+                <td>@ata.DataFinalVigencia</td>
+                <td>@ata.NomeAta</td>
+                <td>@ata.DescricaoAta</td>
+                <td>@ata.StatusAta</td>
+                <td>@ata.Mensagem</td>
+                <td>@ata.DescricaoStatusAta</td>
+            </tr>
+        }
+    </table>
+
+
+
+
+}
+else
+{
+    <p>Nenhum resultado encontrado.</p>
+}
+

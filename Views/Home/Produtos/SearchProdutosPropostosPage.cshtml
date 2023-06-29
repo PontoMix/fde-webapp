@@ -1,0 +1,164 @@
+﻿@{
+    ViewData["Title"] = "Pesquisar Produtos Propostos";
+}
+
+<!--ESTILO DOS FORMULÁRIOS-->
+<style>
+    body {
+        background-color: skyblue;
+        font-family: Gadugi;
+    }
+
+    .page_title {
+        color: whitesmoke;
+        font-family: 'Courier New';
+        font-weight: 800;
+        text-align: center;
+        margin: 30px 0px 30px 0;
+        text-align: center;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    #form_pesquisaProdutosProposto {
+        border: solid 10px;
+        border-color: #0360AB;
+        font-weight: 800;
+        margin: 0 auto;
+        width: 800px;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #59B0F9;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    #form_pesquisarProdutosPropostosLoja {
+        border: solid 10px;
+        border-color: #0360AB;
+        font-weight: 800;
+        margin: 0 auto;
+        margin-bottom: 400px;
+        width: 800px;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #59B0F9;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    input {
+        margin: 20px 0px 30px 0px;
+        width: 800px;
+        height: 40px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .form-control {
+        border-radius: 5px;
+        border-color: #B3DFFD;
+    }
+
+    .btn-primary {
+        margin-top: 10px;
+        font-weight: 800;
+        width: 400px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: #AB221D;
+        border: solid 5px;
+        border-color: #89CFF0;
+    }
+</style>
+
+
+
+<h1 class="page_title" id="title_ata_search">Pesquisar Produtos Propostos pelo Fornecedor para atender Itens da Ata Vigente</h1>
+<h1 class="page_title">(Cadastrados na Tabela Temporária e Em aguardo pelo ADM)</h1>
+<form id="form_pesquisaProdutosProposto" method="post" action="/Home/ProcessarProdutosPropostos">
+    <div class="form-group">
+        <label for="NumeroAta">Número da Ata:</label>
+        <input type="text" class="form-control" id="NumeroAta" name="NumeroAta" placeholder="xx/xxxxx/xx/xx-xxx" maxlength="18" />
+    </div>
+    <div class="form-group">
+        <label for="NumeroPedido">Número do Pedido:</label>
+        <input type="text" class="form-control" id="NumeroPedido" name="NumeroPedido" />
+    </div>
+    <div class="form-group">
+        <label for="StatusProduto">Situação do Produto:</label>
+        <select class="form-control" id="StatusProduto" name="StatusProduto">
+            <option value="0">Default</option>
+            <option value="1">Inativo</option>
+            <option value="2">Ativo</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
+</form>
+
+
+<br />
+<h1 class="page_title" id="title_ata_search">Pesquisar Produtos Propostos pelo Fornecedor</h1>
+<h1 class="page_title">(Cadastrados na Tabela Permanente - já Moderados e Aceitos)</h1>
+
+<form id="form_pesquisarProdutosPropostosLoja" method="post" action="/Home/ProcessarProdutosLoja">
+    <div class="form-group">
+        <label for="NumeroAta">Número da Ata:</label>
+        <input type="text" class="form-control NumeroAtaPPF" id="NumeroAta" name="NumeroAta" placeholder="xx/xxxxx/xx/xx-xxx" maxlength="18" />
+    </div>
+    <div class="form-group">
+        <label for="NumeroProduto">Número do Produto:</label>
+        <input type="text" class="form-control" id="NumeroProduto" name="NumeroProduto" />
+    </div>
+    <div class="form-group">
+        <label for="SituacaoProduto">Situação do Produto:</label>
+        <select class="form-control" id="SituacaoProduto" name="SituacaoProduto">
+            <option value="0">Default</option>
+            <option value="1">Pendente de Aprovação</option>
+            <option value="2">Aprovado</option>
+            <option value="3">Negado</option>
+            <option value="4">Ativo</option>
+            <option value="5">Inativo</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
+</form>
+
+
+<!--SCRIPTS PARA MANIPULAR OS FORMULÁRIOS E SEUS CAMPOS-->
+<script>
+
+    const input = document.querySelector('#NumeroAta');
+
+    input.addEventListener('keypress', () => {
+
+        let inputlength = input.value.length
+
+        if (inputlength === 2 || inputlength === 8 || inputlength === 11) {
+            input.value += '/'
+        } else if (inputlength === 14) {
+            input.value += '-'
+        }
+    })
+
+    const input2 = document.querySelector('.NumeroAtaPPF');
+
+    input2.addEventListener('keypress', () => {
+
+        let inputlength2 = input2.value.length
+
+        if (inputlength2 === 2 || inputlength2 === 8 || inputlength2 === 11) {
+            input2.value += '/'
+        } else if (inputlength2 === 14) {
+            input2.value += '-'
+        }
+    })
+    
+</script>

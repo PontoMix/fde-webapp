@@ -1,0 +1,120 @@
+﻿@{
+    ViewData["Title"] = "Sistema FDE";
+}
+
+<!--ESTILO DOS FORMULÁRIOS-->
+<style>
+    body{
+        background-color: skyblue;
+        font-family: Gadugi;
+    }
+
+    #page_title {
+        color: whitesmoke;
+        font-family:'Courier New';
+        font-weight: 800;
+        text-align: center;
+        margin: 30px 0px 30px 0;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    input {
+        margin: 20px 0px 30px 0px;
+        width: 800px;
+        height: 40px;
+    }
+
+    .btn-primary {
+        margin-top: 10px;
+        font-weight: 800;
+        width: 400px;
+        height: 80px;
+        border-radius: 5px;
+        background-color: #AB221D;
+        border: solid 5px;
+        border-color: ghostwhite;
+    }
+
+    .form-container {
+        text-align: center;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
+
+    form{
+        flex: 0 0 calc(33.33% - 20px);
+        max-width: calc(33.33% - 20px);
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+</style>
+
+
+<h1 id="page_title">Olá! O que você gostaria de fazer agora?</h1>
+
+<form id="form_uploadImagensProduto" method="post" action="/Home/showUploadImagemProduto">
+    <button class="btn btn-primary">Alterar Imagem - Produto</button>
+</form>
+
+<form id="form_propostaSubstituicao" method="post" action="/Home/showAtualizarPropostaProduto">
+    <button class="btn btn-primary">Atualizar - Proposta para Substituição de Produto</button>
+</form>
+
+<form id="form_atas" method="post" action="/Home/showSearchAtas">
+    <button class="btn btn-primary">Pesquisar - Atas</button>
+</form>
+
+<form id="form_entidades" method="post" action="/Home/showSearchEntidades">
+    <button class="btn btn-primary">Pesquisar - Entidades</button>
+</form>
+
+<form id="form_itens" method="post" action="/Home/showSearchItens">
+    <button class="btn btn-primary">Pesquisar - Itens</button>
+</form>
+
+<form id="form_pedidos" method="post" action="/Home/showSearchPedidos">
+    <button class="btn btn-primary">Pesquisar - Pedidos</button>
+</form>
+
+<form id="form_polos" method="post" action="/Home/showSearchPolos">
+    <button class="btn btn-primary">Pesquisar - Polos</button>
+</form>
+
+<form id="form_produtosPropostos" method="post" action="/Home/showProdutosPropostos">
+    <button class="btn btn-primary">Pesquisar - Produtos Propostos</button>
+</form>
+
+<form id="form_NFe" method="post" action="/Home/showNotasFiscais">
+    <button class="btn btn-primary">Pesquisar - Notas Fiscais e Seus Itens</button>
+</form>
+
+<form id="form_ocorrencias" method="post" action="/Home/showOcorrencias">
+    <button class="btn btn-primary">Pesquisar e Atualizar - Ocorrência</button>
+</form>
+
+<form id="form_of" method="post" action="/Home/showOrdemFornecimento">
+    <button class="btn btn-primary">Pesquisar - Ordem de Fornecimento</button>
+</form>
+
+<form id="form_statusPedido" method="post" action="/Home/showUpdatePedido">
+    <button class="btn btn-primary">Atualizar - Status Pedido</button>
+</form>
+
+<form id="form_uploadPDFNFe" method="post" action="/Home/showUploadPDFNFeorSR">
+    <button class="btn btn-primary">Enviar Nota Fiscal ou Simples Remessa - Formato PDF</button>
+</form>
+
+<form id="form_uploadXmlNFe" method="post" action="/Home/showUploadXmlNFe">
+    <button class="btn btn-primary">Enviar Nota Fiscal ou Simples Remessa - Formato XML</button>
+</form>

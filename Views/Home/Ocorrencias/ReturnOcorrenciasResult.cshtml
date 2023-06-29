@@ -1,0 +1,99 @@
+﻿@{
+    ViewData["Title"] = "Resultado de Pesquisa da Ocorrência";
+}
+
+@model OcorrenciasService.OcorrenciaItem[]
+
+
+<style>
+    body {
+        background-color: skyblue;
+        font-family: Gadugi;
+    }
+
+    h1 {
+        color: whitesmoke;
+        font-family: 'Courier New';
+        font-weight: 800;
+        text-align: center;
+        margin: 30px 0px 30px 0;
+        text-align: center;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 800px;
+        margin: 0 auto;
+        background-color: #E6F0F5;
+        border-radius: 10px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    th {
+        background-color: #0360AB;
+        color: #FFFFFF;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F2F9FF;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #D5EAF7;
+    }
+</style>
+
+@if (Model != null && Model.Length > 0)
+{
+    <h1>Resultado de Pesquisa da Ocorrência</h1>
+
+    <table>
+        <tr>
+            <th>Número do Pedido</th>
+            <th>Número da Ocorrência</th>
+            <th>Tipo de Ocorrência</th>
+            <th>Descrição do Tipo de Ocorrência</th>
+            <th>Data Abertura da Ocorrência</th>
+            <th>Número Chave Nota Fiscal</th>
+            <th>Numero do Produto</th>
+            <th>Numero do Item no FDE</th>
+            <th>Número da Ata</th>
+            <th>Descrição do Produto</th>
+            <th>Quantidade do Item</th>
+            <th>Status da Ocorrência</th>
+            <th>Descrição do Status da Ocorrência</th>
+            <th>Mensagem</th>
+            <th>Status</th>
+        </tr>
+        @foreach (var returnOcorrencia in Model)
+        {
+            <tr>
+                <td>@returnOcorrencia.NumeroPedido</td>
+                <td>@returnOcorrencia.NumeroOcorrencia</td>
+                <td>@returnOcorrencia.TipoOcorrencia</td>
+                <td>@returnOcorrencia.DescricaoTipoOcorrencia</td>
+                <td>@returnOcorrencia.DataAberturaOcorrencia</td>
+                <td>@returnOcorrencia.NumeroChaveNotaFiscal</td>
+                <td>@returnOcorrencia.NumeroProduto</td>
+                <td>@returnOcorrencia.NumeroFDEItem</td>
+                <td>@returnOcorrencia.NumeroAta</td>
+                <td>@returnOcorrencia.DescricaoProduto</td>
+                <td>@returnOcorrencia.QuantidadeItem</td>
+                <td>@returnOcorrencia.StatusOcorrencia</td>
+                <td>@returnOcorrencia.DescricaoStatusOcorrencia</td>
+                <td>@returnOcorrencia.Mensagem</td>
+                <td>@returnOcorrencia.Status</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>Nenhum resultado encontrado.</p>
+}

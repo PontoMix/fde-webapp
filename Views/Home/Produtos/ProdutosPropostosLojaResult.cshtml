@@ -1,0 +1,108 @@
+﻿@{
+    ViewData["Title"] = "Resultado da Pesquisa de Produtos Propostos pela Loja";
+}
+
+@model ProdutosService.ProdutoItem[]
+
+
+<style>
+    body {
+        background-color: skyblue;
+        font-family: Gadugi;
+    }
+
+    h1 {
+        color: whitesmoke;
+        font-family: 'Courier New';
+        font-weight: 800;
+        text-align: center;
+        margin: 30px 0px 30px 0;
+        text-align: center;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    .table-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 800px;
+        background-color: #E6F0F5;
+        border-radius: 10px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    th {
+        background-color: #0360AB;
+        color: #FFFFFF;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F2F9FF;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #D5EAF7;
+    }
+</style>
+
+
+@if (Model != null && Model.Length > 0)
+{
+<h1>Resultado da Pesquisa de Produtos Propostos pela Loja</h1>
+<div class="table-container">
+    <table>
+        <tr>
+            <th>Número da Ata</th>
+            <th>Número do Item no FDE</th>
+            <th>Número Produto</th>
+            <th>Nome Amigável do Produto</th>
+            <th>Marca Produto</th>
+            <th>Descrição do Produto</th>
+            <th>Preço Unitário do Produto</th>
+            <th>Número do Item do Fornecedor</th>
+            <th>Data Inclusão na Base de Dados</th>
+            <th>Status Produto</th>
+            <th>Descrição Status Produto</th>
+            <th>Status Produto Item</th>
+            <th>Descrição Status Produto Item</th>
+            <th>Justificativa (se fora inativado na loja)</th>
+            <th>Mensagem</th>
+            <th>Status</th>
+
+        </tr>
+        @foreach (var produtosLojaProposto in Model)
+        {
+            <tr>
+                <td>@produtosLojaProposto.NumeroAta</td>
+                <td>@produtosLojaProposto.NumeroFDEItem</td>
+                <td>@produtosLojaProposto.NumeroProduto</td>
+                <td>@produtosLojaProposto.NomeAmigavelProduto</td>
+                <td>@produtosLojaProposto.MarcaProduto</td>
+                <td>@produtosLojaProposto.DescricaoProduto</td>
+                <td>@produtosLojaProposto.Vl_PrecoUnitario</td>
+                <td>@produtosLojaProposto.NumeroItemFornecedor</td>
+                <td>@produtosLojaProposto.DataInclusaoBase</td>
+                <td>@produtosLojaProposto.StatusProduto</td>
+                <td>@produtosLojaProposto.DescricaoStatusProduto</td>
+                <td>@produtosLojaProposto.StatusProdutoItem</td>
+                <td>@produtosLojaProposto.DescricaoStatusProdutoItem</td>
+                <td>@produtosLojaProposto.JustificativaSituacao</td>
+                <td>@produtosLojaProposto.Mensagem</td>
+                <td>@produtosLojaProposto.Status</td>
+            </tr>
+        }
+    </table> 
+</div>
+}
+else
+{
+    <p>Nenhum resultado encontrado.</p>
+}

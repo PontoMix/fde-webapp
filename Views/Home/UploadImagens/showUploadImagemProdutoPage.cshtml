@@ -1,0 +1,187 @@
+﻿@{
+    ViewData["Title"] = "Upload de Imagem do Produto";
+}
+
+<!--ESTILO DOS FORMULÁRIOS-->
+<style>
+    body {
+        background-color: skyblue;
+        font-family: Gadugi;
+    }
+
+    .important_infos{
+        margin: 0 auto;
+        text-align: center;
+        width: 500px;
+        height: 500px;
+        font-family: Gadugi;
+        font-weight: 800;
+        color: white;
+        text-shadow: 2px 2px 4px black;
+        box-shadow: 0 0px 0px 10px rgba(255, 141, 26, 0.6);
+        border: 4px solid white;
+        border-radius: 6px;
+        background-color: rgba( 255, 26, 26, 0.8);
+    }
+
+    h1 {
+        color: whitesmoke;
+        font-family: 'Courier New';
+        font-weight: 800;
+        text-align: center;
+        margin: 30px 0px 30px 0;
+        text-align: center;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    h6{
+        margin-top: 10px;
+    }
+
+    form {
+        align-items: center;
+        justify-content: center;
+        border: solid 10px;
+        border-color: #0360AB;
+        font-weight: 800;
+        margin: 0 auto;
+        width: 800px;
+        height: 1000px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #59B0F9;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    input {
+        margin: 20px 0px 30px 0px;
+        width: 800px;
+        height: 40px;
+    }
+
+    .ImagemProduto{
+        margin-left: 0 auto;
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form-control {
+        border-radius: 5px;
+        border-color: #B3DFFD;
+    }
+
+    #ImagemProduto{
+        margin: 50px 0px 0px 680px;
+    }
+    .btn-primary {
+        margin-top: 10px;
+        font-weight: 800;
+        width: 400px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: #AB221D;
+        border: solid 5px;
+        border-color: #89CFF0;
+    }
+</style>
+
+<h1>Importante!</h1>
+
+<div class="important_infos">
+
+    <h6>Tamanho Máximo da Imagem:</h6>
+    <p>1000px de largura X 1000 de altura</p>
+    <br />
+
+    <h6>Tamanho do Arquivo:</h6>
+    <p>350 KB</p>
+    <br />
+
+    <h6>Formatos Aceitos:</h6>
+    <p>.jpg, .jpeg e .png</p>
+    <br />
+
+    <h6>Cor de Fundo:</h6>
+    <p>Preferencialmente Branco</p>
+    <br />
+
+    <h6>Modo de Cor:</h6>
+    <p>RGB 24 bits</p>
+    <br />
+</div>
+
+<br/>
+<h1>Upload de Imagem do Produto</h1>
+
+<form method="post" enctype="multipart/form-data" action="/Home/ProcessarUploadImagemProduto">
+    <div class="form-group">
+        <label for="NumeroAta">Número da Ata:</label>
+        <input type="text" class="form-control" id="NumeroAta" name="NumeroAta" placeholder="xx/xxxxx/xx/xx-xxx" maxlength="18" />
+    </div>
+    <div class="form-group">
+        <label for="NumeroFDEItem">Número do Item da Ata Cadastrada na Base de Dados da FDE:</label>
+        <input type="text" class="form-control" id="NumeroFDEItem" name="NumeroFDEItem" />
+    </div>
+    <div class="form-group">
+        <label for="NumeroItemFornecedor">Número do Item Cadastrado na Base de Dados da FDE:</label>
+        <input type="text" class="form-control" id="NumeroItemFornecedor" name="NumeroItemFornecedor" />
+    </div>
+    <div class="form-group">
+        <label for="DescricaoImagem">Descrição da Imagem:</label>
+        <input type="text" class="form-control" id="DescricaoImagem" name="DescricaoImagem" />
+    </div>
+    <div class="form-group">
+        <label for="FlPrincipal">Imagem Principal (Sim ou Não?):</label>
+        <select class="form-control" id="FlPrincipal" name="FlPrincipal">
+            <option value="0">Não</option>
+            <option value="1">Sim</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="NumeroOrdem">Número de Ordem de Exibição:</label>
+        <select class="form-control" id="NumeroOrdem" name="NumeroOrdem">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    <br/>
+    <div class="form-group ImagemProduto">
+        <label for="ImagemProduto">Imagem do Produto:</label>
+        <input type="file" class="form-control-file" id="ImagemProduto" name="ImagemProduto" required/>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+
+
+<!--SCRIPTS PARA MANIPULAR OS FORMULÁRIOS E SEUS CAMPOS-->
+<script>
+
+    const input = document.querySelector('#NumeroAta');
+
+    input.addEventListener('keypress', () => {
+
+        let inputlength = input.value.length
+
+        if (inputlength === 2 || inputlength === 8 || inputlength === 11) {
+            input.value += '/'
+        } else if (inputlength === 14) {
+            input.value += '-'
+        }
+    })
+
+</script>

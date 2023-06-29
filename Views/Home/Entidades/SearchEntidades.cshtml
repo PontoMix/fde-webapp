@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "Pesquisar Entidades";
+}
+
+<!--ESTILO DOS FORMULÁRIOS-->
+<style>
+    body {
+        background-color: skyblue;
+        font-family: Gadugi;
+    }
+
+    .page_title {
+        color: whitesmoke;
+        font-family: 'Courier New';
+        font-weight: 800;
+        text-align: center;
+        margin: 30px 0px 30px 0;
+        text-align: center;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    #form_pesquisar_entidades {
+        border: solid 10px;
+        border-color: #0360AB;
+        font-weight: 800;
+        margin: 0 auto;
+        width: 800px;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #59B0F9;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    input {
+        margin: 20px 0px 30px 0px;
+        width: 800px;
+        height: 40px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .form-control {
+        border-radius: 5px;
+        border-color: #B3DFFD;
+    }
+
+    .btn-primary {
+        margin-top: 10px;
+        font-weight: 800;
+        width: 400px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: #AB221D;
+        border: solid 5px;
+        border-color: #89CFF0;
+    }
+</style>
+
+<h1 class="page_title">Pesquisar Entidades</h1>
+
+<form id="form_pesquisar_entidades" method="post" action="/Home/ProcessarPesquisaEntidades">
+    <div class="form-group">
+        <label for="numeroPolo">Número do Polo:</label>
+        <input type="text" class="form-control" id="numeroPolo" name="numeroPolo"/>
+    </div>
+    <div class="form-group">
+        <label for="codigoEntidade">Número da Entidade:</label>
+        <input type="text" class="form-control" id="codigoEntidade" name="codigoEntidade" placeholder="" maxlength="12" />
+    </div>
+    <div class="form-group">
+        <label for="ano">Ano:</label>
+        <input type="text" class="form-control" id="ano" name="ano" placeholder="2023" maxlength="4" />
+    </div>
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
+</form>

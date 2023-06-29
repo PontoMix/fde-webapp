@@ -1,0 +1,102 @@
+﻿@{
+    ViewData["Title"] = "Consulta de Notas Fiscais";
+}
+
+<!--ESTILO DOS FORMULÁRIOS-->
+<style>
+    body {
+        background-color: skyblue;
+        font-family: Gadugi;
+    }
+    .page_title {
+        color: whitesmoke;
+        font-family: 'Courier New';
+        font-weight: 800;
+        text-align: center;
+        margin: 30px 0px 30px 0;
+        text-align: center;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    #form_notasFiscais {
+        border: solid 10px;
+        border-color: #0360AB;
+        font-weight: 800;
+        margin: 0 auto;
+        width: 800px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #59B0F9;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    #form_pesquisarNotaseItens {
+        border: solid 10px;
+        border-color: #0360AB;
+        font-weight: 800;
+        margin: 0 auto;
+        width: 800px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #59B0F9;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    input {
+        margin: 20px 0px 30px 0px;
+        width: 800px;
+        height: 40px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .form-control {
+        border-radius: 5px;
+        border-color: #B3DFFD;
+    }
+
+    .btn-primary {
+        margin-top: 10px;
+        font-weight: 800;
+        width: 400px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: #AB221D;
+        border: solid 5px;
+        border-color: #89CFF0;
+    }
+</style>
+
+
+
+<h1 class="page_title" id="title_ata_search">Pesquisar Notas Fiscais Cadastradas</h1>
+
+<form id="form_notasFiscais" method="post" action="/Home/ProcessarRetornoNotasFiscais">
+    <div class="form-group">
+        <label for="NovoProduto_NumeroProduto">Chave (ID) da Nota Fiscal eletrônica (NF-e):</label>
+        <input type="text" class="form-control" id="NovoProduto_NumeroProduto" name="NovoProduto.NumeroProduto" />
+    </div>
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
+</form>
+
+
+
+<h1 class="page_title" id="title_ata_search">Pesquisar Itens associados pelo Fornecedor nas Notas Fiscais</h1>
+
+<form id="form_pesquisarNotaseItens" method="post" action="/Home/ProcessarRetornoNotasFiscaisDetalhado">
+    <div class="form-group">
+        <label for="NovoProduto_NumeroProduto">Chave (ID) da Nota Fiscal eletrônica (NF-e):</label>
+        <input type="text" class="form-control" id="NovoProduto_NumeroProduto" name="NovoProduto.NumeroProduto" />
+    </div>
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
+</form>

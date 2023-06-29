@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "Resultado da Pesquisa de Entidade";
+}
+
+@model EntidadesService.Entidade[]
+
+
+<style>
+    body {
+        background-color: skyblue;
+        font-family: Gadugi;
+    }
+
+    h1 {
+        color: whitesmoke;
+        font-family: 'Courier New';
+        font-weight: 800;
+        text-align: center;
+        margin: 30px 0px 30px 0;
+        text-align: center;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 800px;
+        margin: 0 auto;
+        background-color: #E6F0F5;
+        border-radius: 10px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    th {
+        background-color: #0360AB;
+        color: #FFFFFF;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F2F9FF;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #D5EAF7;
+    }
+</style>
+
+@if (Model != null && Model.Length > 0)
+{
+    <h1 id="title_search_result">Resultado da Pesquisa de Entidades</h1>
+
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Código da Entidade</th>
+                <th>Nome da Entidade</th>
+                <th>Telefone</th>
+                <th>Código da Entidade</th>
+                <th>Descrição do Tipo da Entidade</th>
+                <th>Município</th>
+                <th>Código da Entidade do Pai</th>
+                <th>Nome da Entidade do Pai</th>
+                <th>Código do Tipo da Entidade do Pai</th>
+                <th>Nome do Tipo da Entidade do Pai</th>
+                <th>Mensagem</th>
+                <th>Status</th>          
+
+                <!-- Adicione outras colunas conforme necessário -->
+            </tr>
+            @foreach (var entidade in Model)
+            {
+                <tr>
+                    <td>@entidade.CodEntidade</td>
+                    <td>@entidade.NomeEntidade</td>
+                    <td>@entidade.Telefone</td>
+                    <td>@entidade.CodTipoEntidade</td>
+                    <td>@entidade.DescricaoTipoEntidade</td>
+                    <td>@entidade.Municipio</td>
+                    <td>@entidade.CodEntidadePai</td>
+                    <td>@entidade.NomeEntidadePai</td>
+                    <td>@entidade.CodTipoEntidadePai</td>
+                    <td>@entidade.NomeTipoEntidadePai</td>
+                    <td>@entidade.Mensagem</td>
+                    <td>@entidade.Status</td>
+
+                    <!-- Adicione outras colunas conforme necessário -->
+                </tr>
+            }
+        </table>
+    </div>
+}
+
+else
+{
+    <p>Nenhum resultado encontrado.</p>
+}

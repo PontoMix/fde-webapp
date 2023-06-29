@@ -1,0 +1,181 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ClientProxyWebServiceFDE_MVC
+build_property.RootNamespace = ClientProxyWebServiceFDE_MVC
+build_property.ProjectDir = C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Atas/AtasResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBdGFzXEF0YXNSZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Atas/ItensAtasResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBdGFzXEl0ZW5zQXRhc1Jlc3VsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Atas/SearchAtasPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBdGFzXFNlYXJjaEF0YXNQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Entidades/EntidadesResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFbnRpZGFkZXNcRW50aWRhZGVzUmVzdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Entidades/SearchEntidades.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFbnRpZGFkZXNcU2VhcmNoRW50aWRhZGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Itens/ItensResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJdGVuc1xJdGVuc1Jlc3VsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Itens/SearchItens.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJdGVuc1xTZWFyY2hJdGVucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/NotasFiscais/ItensNotasFiscaisResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOb3Rhc0Zpc2NhaXNcSXRlbnNOb3Rhc0Zpc2NhaXNSZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/NotasFiscais/NotasFiscaisPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOb3Rhc0Zpc2NhaXNcTm90YXNGaXNjYWlzUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/NotasFiscais/NotasFiscaisResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOb3Rhc0Zpc2NhaXNcTm90YXNGaXNjYWlzUmVzdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Ocorrencias/OcorrenciasPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPY29ycmVuY2lhc1xPY29ycmVuY2lhc1BhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Ocorrencias/ReturnOcorrenciasResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPY29ycmVuY2lhc1xSZXR1cm5PY29ycmVuY2lhc1Jlc3VsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Ocorrencias/UpdatedOcorrenciasResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPY29ycmVuY2lhc1xVcGRhdGVkT2NvcnJlbmNpYXNSZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/OrdensFornecimento/OrdensFornecimentoPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPcmRlbnNGb3JuZWNpbWVudG9cT3JkZW5zRm9ybmVjaW1lbnRvUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/OrdensFornecimento/OrdensFornecimentoResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPcmRlbnNGb3JuZWNpbWVudG9cT3JkZW5zRm9ybmVjaW1lbnRvUmVzdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Pedidos/ItensPedidosResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQZWRpZG9zXEl0ZW5zUGVkaWRvc1Jlc3VsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Pedidos/PedidosResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQZWRpZG9zXFBlZGlkb3NSZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Pedidos/SearchPedidosPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQZWRpZG9zXFNlYXJjaFBlZGlkb3NQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Polos/PolosResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQb2xvc1xQb2xvc1Jlc3VsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Polos/SearchPolos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQb2xvc1xTZWFyY2hQb2xvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Produtos/AtualizarPropostaProdutoPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdXRvc1xBdHVhbGl6YXJQcm9wb3N0YVByb2R1dG9QYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Produtos/ProdutosPropostosLojaResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdXRvc1xQcm9kdXRvc1Byb3Bvc3Rvc0xvamFSZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Produtos/ProdutosPropostosResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdXRvc1xQcm9kdXRvc1Byb3Bvc3Rvc1Jlc3VsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Produtos/PropostaProdutoAtualizadoResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdXRvc1xQcm9wb3N0YVByb2R1dG9BdHVhbGl6YWRvUmVzdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Produtos/SearchProdutosPropostosPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdXRvc1xTZWFyY2hQcm9kdXRvc1Byb3Bvc3Rvc1BhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/StatusPedidos/UpdatedDetailedPedidoStatusResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdGF0dXNQZWRpZG9zXFVwZGF0ZWREZXRhaWxlZFBlZGlkb1N0YXR1c1Jlc3VsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/StatusPedidos/UpdatedPedidoStatusResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdGF0dXNQZWRpZG9zXFVwZGF0ZWRQZWRpZG9TdGF0dXNSZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/StatusPedidos/UpdatePedidos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdGF0dXNQZWRpZG9zXFVwZGF0ZVBlZGlkb3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/UploadImagens/showUploadImagemProdutoPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGxvYWRJbWFnZW5zXHNob3dVcGxvYWRJbWFnZW1Qcm9kdXRvUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/UploadImagens/showUploadImagemProdutoResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGxvYWRJbWFnZW5zXHNob3dVcGxvYWRJbWFnZW1Qcm9kdXRvUmVzdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/UploadNFeorSR_XMLorPDF/showUploadPDF_NForSRPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGxvYWRORmVvclNSX1hNTG9yUERGXHNob3dVcGxvYWRQREZfTkZvclNSUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/UploadNFeorSR_XMLorPDF/showUploadXML_NForSRPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGxvYWRORmVvclNSX1hNTG9yUERGXHNob3dVcGxvYWRYTUxfTkZvclNSUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/UploadNFeorSR_XMLorPDF/UploadedPDF_NForSRResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGxvYWRORmVvclNSX1hNTG9yUERGXFVwbG9hZGVkUERGX05Gb3JTUlJlc3VsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/UploadNFeorSR_XMLorPDF/UploadedXML_NForSRResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGxvYWRORmVvclNSX1hNTG9yUERGXFVwbG9hZGVkWE1MX05Gb3JTUlJlc3VsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-97p0sqrfax

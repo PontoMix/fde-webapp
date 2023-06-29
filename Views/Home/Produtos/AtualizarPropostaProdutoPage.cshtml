@@ -1,0 +1,125 @@
+﻿@{
+    ViewData["Title"] = "Atualizar Produto - Proposta para substituição";
+}
+
+<!--ESTILO DOS FORMULÁRIOS-->
+<style>
+    body {
+        background-color: skyblue;
+        font-family: Gadugi;
+    }
+
+    .page_title {
+        color: whitesmoke;
+        font-family: 'Courier New';
+        font-weight: 800;
+        text-align: center;
+        margin: 30px 0px 30px 0;
+        text-align: center;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    #title_ata_search, #title_order_search {
+        margin: 50px 0 30px 0;
+    }
+
+    #form_atualizarPropostaProduto {
+        border: solid 10px;
+        border-color: #0360AB;
+        font-weight: 800;
+        margin: 0 auto;
+        width: 800px;
+        height: 1200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #59B0F9;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    input {
+        margin: 20px 0px 30px 0px;
+        width: 800px;
+        height: 40px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .form-control {
+        border-radius: 5px;
+        border-color: #B3DFFD;
+    }
+
+    .btn-primary {
+        margin-top: 10px;
+        font-weight: 800;
+        width: 400px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: #AB221D;
+        border: solid 5px;
+        border-color: #89CFF0;
+    }
+</style>
+
+
+
+<h1 class="page_title" id="title_ata_search">Atualizar Produto - Proposta para substituição</h1>
+
+<form id="form_atualizarPropostaProduto" method="post" action="/Home/ProcessarNovaPropostaProduto">
+    <div class="form-group">
+        <label for="NovoProduto_NumeroProduto">Número (ID) do Produto Cadastrado (Aprovado):</label>
+        <input type="text" class="form-control" id="NovoProduto_NumeroProduto" name="NovoProduto.NumeroProduto" />
+    </div>
+    <div class="form-group">
+        <label for="NovoProduto_NumeroAta">Número da Ata:</label>
+        <input type="text" class="form-control" id="NovoProduto_NumeroAta" name="NovoProduto.NumeroAta" placeholder="xx/xxxxx/xx/xx-xxx" maxlength="18" />
+    </div>
+    <div class="form-group">
+        <label for="NovoProduto_NumeroFDEItem">Número (ID) do Item Cadastrado na FDE:</label>
+        <input type="text" class="form-control" id="NovoProduto_NumeroFDEItem" name="NovoProduto.NumeroFDEItem" />
+    </div>
+    <div class="form-group">
+        <label for="NovoProduto_NumeroItemFornecedor">Número (ID) do Item Cadastrado do Fornecedor cadastrado na FDE:</label>
+        <input type="text" class="form-control" id="NovoProduto_NumeroItemFornecedor" name="NovoProduto.NumeroItemFornecedor" />
+    </div>
+    <div class="form-group">
+        <label for="NovoProduto_NomeAmigavelProduto">Nome Amigável do Produto:</label>
+        <input type="text" class="form-control" id="NovoProduto_NomeAmigavelProduto" name="NovoProduto.NomeAmigavelProduto" />
+    </div>
+    <div class="form-group">
+        <label for="NovoProduto_DescricaoProduto">Descrição do Produto:</label>
+        <input type="text" class="form-control" id="NovoProduto_DescricaoProduto" name="NovoProduto.DescricaoProduto" />
+    </div>
+    <div class="form-group">
+        <label for="NovoProduto_MarcaProduto">Marca do Produto:</label>
+        <input type="text" class="form-control" id="NovoProduto_MarcaProduto" name="NovoProduto.MarcaProduto" />
+    </div>
+    <div class="form-group">
+        <label for="NovoProduto_Vl_PrecoUnitario">Preço Unitário do Produto:</label>
+        <input type="text" class="form-control" id="NovoProduto_Vl_PrecoUnitario" name="NovoProduto.Vl_PrecoUnitario" />
+    </div>
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
+</form>
+
+<!--SCRIPTS PARA MANIPULAR OS FORMULÁRIOS E SEUS CAMPOS-->
+<script>
+
+    const input = document.querySelector('#NovoProduto_NumeroAta');
+
+    input.addEventListener('keypress', () => {
+
+        let inputlength = input.value.length
+
+        if (inputlength === 2 || inputlength === 8 || inputlength === 11) {
+            input.value += '/'
+        } else if (inputlength === 14) {
+            input.value += '-'
+        }
+    })
+
+</script>

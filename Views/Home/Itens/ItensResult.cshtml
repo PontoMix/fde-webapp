@@ -1,0 +1,120 @@
+﻿@{
+    ViewData["Title"] = "Resultado da Pesquisa de Itens";
+}
+
+@model PedidosService.PedidoItem[]
+
+<style>
+    body {
+        background-color: skyblue;
+        font-family: Gadugi;
+    }
+
+    div {
+        display: flex; 
+        justify-content: center;
+    }
+
+    h1 {
+        color: whitesmoke;
+        font-family: 'Courier New';
+        font-weight: 800;
+        text-align: center;
+        margin: 30px 0px 30px 0;
+        text-align: center;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    table {
+        margin: 0 auto;
+        text-align: center;
+        border-collapse: collapse;
+        width: 800px;
+        margin: 0 auto;
+        background-color: #E6F0F5;
+        border-radius: 10px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    th {
+        background-color: #0360AB;
+        color: #FFFFFF;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F2F9FF;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #D5EAF7;
+    }
+</style>
+
+
+@if (Model != null && Model.Length > 0)
+{
+<h1>Resultado da Pesquisa de Itens</h1>
+
+    <div  class="table-container">
+        <table>
+            <tr>
+                <th>Núm. ID dos Itens pedidos</th>
+                <th>Núm. do Pedido</th>
+                <th>Código da Entidade</th>
+                <th>Núm. Item no FDE</th>
+                <th>Núm. Produto</th>
+                <th>Tipo de Embalagem</th>
+                <th>Qtd de Item Pedido</th>
+                <th>Valor Unitário do Item Pedido</th>
+                <th>Código do Produto do Fornecedo</th>
+                <th>Núm. BEC da Natureza da Despesa</th>
+                <th>Unidade Fornecimento</th>
+                <th>Núm. ID da OF</th>
+                <th>Núm. da OF</th>
+                <th>Status do Item</th>
+                <th>Descrição do Status do Item</th>
+                <th>Possui Ocorrência?</th>
+                <th>Mensagem</th>
+                <th>Status</th>
+
+
+                <!-- Adicione outras colunas conforme necessário -->
+            </tr>
+            @foreach (var itensPedido in Model)
+            {
+                <tr>
+                    <td>@itensPedido.NumeroIdPedidoItem</td>
+                    <td>@itensPedido.NumeroPedido</td>
+                    <td>@itensPedido.CodEntidade</td>
+                    <td>@itensPedido.NumeroFDEItem</td>
+                    <td>@itensPedido.NumeroProduto</td>
+                    <td>@itensPedido.TipoEmbalagem</td>
+                    <td>@itensPedido.QuantidadeItemPedido</td>
+                    <td>@itensPedido.ValorUnitarioItemPedido</td>
+                    <td>@itensPedido.CodProduto_Fornecedor</td>
+                    <td>@itensPedido.NaturezaDespesa</td>
+                    <td>@itensPedido.UnidadeFornecimento</td>
+                    <td>@itensPedido.NumeroFDEOSOF</td>
+                    <td>@itensPedido.NumeroOSOF</td>
+                    <td>@itensPedido.StatusItem</td>
+                    <td>@itensPedido.DescricaoStatusItem</td>
+                    <td>@itensPedido.PossuiOcorrencia</td>
+                    <td>@itensPedido.Mensagem</td>
+                    <td>@itensPedido.Status</td>
+
+                    <!-- Adicione outras colunas conforme necessário -->
+                </tr>
+            }
+        </table>
+    </div>
+}
+
+else
+{
+    <p>Nenhum resultado encontrado.</p>
+}

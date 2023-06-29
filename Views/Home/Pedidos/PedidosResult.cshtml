@@ -1,0 +1,133 @@
+﻿@{
+    ViewData["Title"] = "Resultado da Pesquisa de Pedido";
+}
+
+@model PedidosService.Pedido[]
+
+<style>
+    body {
+        background-color: skyblue;
+        font-family: Gadugi;
+    }
+
+    h1{
+        color: whitesmoke;
+        font-family: 'Courier New';
+        font-weight: 800;
+        text-align: center;
+        margin: 30px 0px 30px 0;
+        text-align: center;
+        margin: 40px 0px 50px 0px;
+        text-shadow: 2px 2px 4px #000000;
+    }
+    .table-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 1000px;
+        background-color: #E6F0F5;
+        border-radius: 10px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    th {
+        background-color: #0360AB;
+        color: #FFFFFF;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F2F9FF;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #D5EAF7;
+    }
+</style>
+
+@if (Model != null && Model.Length > 0)
+{
+    <div id="numberAta_Pedido_OSOFandSituation">
+        <h5>Número da Ata pesquisada: @ViewBag.NumeroAta</h5><br />
+        <h5>Número do Numero do Pedido pesquisado: @ViewBag.NumeroPedido</h5><br />
+        <h5>Número da Ordem de Fornecimento pesquisado: @ViewBag.NumeroOSOF</h5><br />
+        <h5>Situação do Pedido pesquisado: @ViewBag.SituacaoPedido</h5><br />
+    </div>
+
+
+    <form id="form_pesquisa_itens_pedido" method="post" action="/Home/ProcessarItensPedidos">
+        <input type="hidden" name="NumeroAta" value="@ViewBag.NumeroAta" />
+        <input type="hidden" name="NumeroPedido" value="@ViewBag.NumeroPedido" />
+        <input type="hidden" name="NumeroOSOF" value="@ViewBag.NumeroOSOF" />
+        <input type="hidden" name="DtInicial" value="@ViewBag.DtInicial" />
+        <input type="hidden" name="DtFinal" value="@ViewBag.DtFinal" />
+        <input type="hidden" name="SituacaoPedido" value="@ViewBag.SituacaoPedido" />
+        <input type="hidden" name="CodEntidadePai" value="@ViewBag.CodEntidadePai" />
+
+        <button type="submit" class="btn btn-primary">Pesquisar Itens do Pedido</button>
+    </form>
+
+    <h1 id="title_search_result">Resultado da Pesquisa de Pedidos</h1>
+
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Número do Pedido</th>
+                <th>Número da Ata</th>
+                <th>Data de Abertura Pedido</th>
+                <th>Município da Entidade</th>
+                <th>Logradouro da Entidade</th>
+                <th>Número de Logradouro da Entidade</th>
+                <th>Bairro da Entidade</th>
+                <th>Número de CEP da Entidade</th>
+                <th>Valor Total do Pedido</th>
+                <th>Status do Pedido</th>
+                <th>Descrição do Status</th>
+                <th>Código da Entidade Gestora</th>
+                <th>Nome da Entidade Gestora</th>
+                <th>Código do tipo da Entidade Gestora</th>
+                <th>Descrição do Tipo da entidade Gestora</th>
+                <th>Mensagem</th>
+                <th>Status</th>
+
+                <!-- Adicione outras colunas conforme necessário -->
+            </tr>
+            @foreach (var pedido in Model)
+            {
+                <tr>
+                    <td>@pedido.NumeroPedido</td>
+                    <td>@pedido.NumeroAta</td>
+                    <td>@pedido.DataAberturaPedido</td>
+                    <td>@pedido.EntidadeMunicipio</td>
+                    <td>@pedido.EntidadeLogradouro</td>
+                    <td>@pedido.EntidadeNumeroLogradouro</td>
+                    <td>@pedido.EntidadeBairro</td>
+                    <td>@pedido.EntidadeCEP</td>
+                    <td>@pedido.ValorTotalPedido</td>
+                    <td>@pedido.StatusPedido</td>
+                    <td>@pedido.DescricaoStatus</td>
+                    <td>@pedido.CodEntidadePai</td>
+                    <td>@pedido.NomeEntidadePai</td>
+                    <td>@pedido.CodTipoEntidadePai</td>
+                    <td>@pedido.NomeTipoEntidadePai</td>
+                    <td>@pedido.Mensagem</td>
+                    <td>@pedido.Status</td>
+
+                    <!-- Adicione outras colunas conforme necessário -->
+                </tr>
+            }
+        </table>
+    </div>
+}
+
+else
+{
+    <p>Nenhum resultado encontrado.</p>
+}

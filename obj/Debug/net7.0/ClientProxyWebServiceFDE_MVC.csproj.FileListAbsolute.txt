@@ -1,0 +1,79 @@
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\appsettings.Development.json
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\appsettings.json
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\Connected Services\AtasService\ConnectedService.json
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\ClientProxyWebServiceFDE_MVC.staticwebassets.runtime.json
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\ClientProxyWebServiceFDE_MVC.exe
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\ClientProxyWebServiceFDE_MVC.deps.json
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\ClientProxyWebServiceFDE_MVC.runtimeconfig.json
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\ClientProxyWebServiceFDE_MVC.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\ClientProxyWebServiceFDE_MVC.pdb
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.WsTrust.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.Saml.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\Microsoft.IdentityModel.Xml.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\System.Private.ServiceModel.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\System.ServiceModel.Duplex.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\System.ServiceModel.Federation.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\System.ServiceModel.Http.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\System.ServiceModel.NetTcp.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\System.ServiceModel.Primitives.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\System.ServiceModel.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\System.ServiceModel.Security.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\cs\System.Private.ServiceModel.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\de\System.Private.ServiceModel.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\es\System.Private.ServiceModel.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\fr\System.Private.ServiceModel.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\it\System.Private.ServiceModel.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\ja\System.Private.ServiceModel.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\ko\System.Private.ServiceModel.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\pl\System.Private.ServiceModel.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\pt-BR\System.Private.ServiceModel.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\ru\System.Private.ServiceModel.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\tr\System.Private.ServiceModel.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\zh-Hans\System.Private.ServiceModel.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\zh-Hant\System.Private.ServiceModel.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\cs\System.ServiceModel.Federation.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\de\System.ServiceModel.Federation.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\es\System.ServiceModel.Federation.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\fr\System.ServiceModel.Federation.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\it\System.ServiceModel.Federation.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\ja\System.ServiceModel.Federation.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\ko\System.ServiceModel.Federation.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\pl\System.ServiceModel.Federation.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\pt-BR\System.ServiceModel.Federation.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\ru\System.ServiceModel.Federation.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\tr\System.ServiceModel.Federation.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\zh-Hans\System.ServiceModel.Federation.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\zh-Hant\System.ServiceModel.Federation.resources.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\ClientProxyWebServiceFDE_MVC.csproj.AssemblyReference.cache
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\ClientProxyWebServiceFDE_MVC.GeneratedMSBuildEditorConfig.editorconfig
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\ClientProxyWebServiceFDE_MVC.AssemblyInfoInputs.cache
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\ClientProxyWebServiceFDE_MVC.AssemblyInfo.cs
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\ClientProxyWebServiceFDE_MVC.csproj.CoreCompileInputs.cache
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\ClientProxyWebServiceFDE_MVC.MvcApplicationPartsAssemblyInfo.cache
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\ClientProxyWebServiceFDE_MVC.RazorAssemblyInfo.cache
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\ClientProxyWebServiceFDE_MVC.RazorAssemblyInfo.cs
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\staticwebassets\msbuild.ClientProxyWebServiceFDE_MVC.Microsoft.AspNetCore.StaticWebAssets.props
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\staticwebassets\msbuild.build.ClientProxyWebServiceFDE_MVC.props
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.ClientProxyWebServiceFDE_MVC.props
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.ClientProxyWebServiceFDE_MVC.props
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\staticwebassets.pack.json
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\staticwebassets.build.json
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\staticwebassets.development.json
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\scopedcss\bundle\ClientProxyWebServiceFDE_MVC.styles.css
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\scopedcss\projectbundle\ClientProxyWebServiceFDE_MVC.bundle.scp.css
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\ClientProxyWebServiceFDE_MVC.csproj.CopyComplete
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\ClientProxyWebServiceFDE_MVC.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\refint\ClientProxyWebServiceFDE_MVC.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\ClientProxyWebServiceFDE_MVC.pdb
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\ClientProxyWebServiceFDE_MVC.genruntimeconfig.cache
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\obj\Debug\net7.0\ref\ClientProxyWebServiceFDE_MVC.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\Connected Services\PedidosService\ConnectedService.json
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\Connected Services\EntidadesService\ConnectedService.json
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\Connected Services\OcorrenciasService\ConnectedService.json
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\Connected Services\OrdensFornecimentoService\ConnectedService.json
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\Connected Services\ProdutosService\ConnectedService.json
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\Connected Services\NotasFiscaisService\ConnectedService.json

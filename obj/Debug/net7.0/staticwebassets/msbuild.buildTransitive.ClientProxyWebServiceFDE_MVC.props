@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\ClientProxyWebServiceFDE_MVC.props" />
+</Project>

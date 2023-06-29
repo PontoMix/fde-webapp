@@ -1,0 +1,124 @@
+﻿@{
+    ViewData["Title"] = "Upload de PDF - NFe ou Simples Remessa";
+}
+
+
+<!--ESTILO DOS FORMULÁRIOS-->
+<style>
+    body {
+        background-color: skyblue;
+        font-family: Gadugi;
+    }
+
+    h1 {
+        color: whitesmoke;
+        font-family: 'Courier New';
+        font-weight: 800;
+        text-align: center;
+        margin: 30px 0px 30px 0;
+        text-align: center;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    h6 {
+        margin-top: 10px;
+    }
+
+    .important_infos {
+        margin: 0 auto;
+        text-align: center;
+        width: 300px;
+        height: 300px;
+        font-family: Gadugi;
+        font-weight: 800;
+        color: white;
+        text-shadow: 2px 2px 4px black;
+        box-shadow: 0 0px 0px 10px rgba(255, 141, 26, 0.6);
+        border: 4px solid white;
+        border-radius: 6px;
+        background-color: rgba( 255, 26, 26, 0.8);
+    }
+
+    form {
+        align-items: center;
+        justify-content: center;
+        border: solid 10px;
+        border-color: #0360AB;
+        font-weight: 800;
+        margin: 0 auto;
+        width: 600px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #59B0F9;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    input {
+        margin: 20px 0px 30px 0px;
+        width: 800px;
+        height: 40px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form-control {
+        border-radius: 5px;
+        border-color: #B3DFFD;
+    }
+
+    #pdfFile{
+        margin: 50px 0px 0px 680px;
+    }
+
+    .btn-primary {
+        margin-top: 10px;
+        font-weight: 800;
+        width: 400px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: #AB221D;
+        border: solid 5px;
+        border-color: #89CFF0;
+    }
+
+
+</style>
+
+<h1>Importante!</h1>
+
+<div class="important_infos">
+
+    <h6>Tamanho Máximo do Arquivo:</h6>
+    <p>1 MB</p>
+    <br />
+
+    <h6>DPI:</h6>
+    <p>300</p>
+    <br />
+
+    <h6>Formatos Aceitos:</h6>
+    <p>.pdf</p>
+    <br />
+</div>
+
+<br />
+<h1>Upload de PDF - NFe ou Simples Remessa</h1>
+
+
+<form method="post" enctype="multipart/form-data" action="/Home/ProcessarUploadPDFNFeorSRPage">
+    <div class="form-group">
+        <label for="ArquivoXml">Arquivo PDF:</label>
+        <input type="file" class="form-control-file" id="pdfFile" name="pdfFile" required accept=".pdf" />
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>

@@ -1,0 +1,111 @@
+﻿@{
+    ViewData["Title"] = "Resultado da Pesquisa de Itens do Pedido";
+}
+
+@model PedidosService.Pedido[]
+
+
+<style>
+    body {
+        background-color: skyblue;
+        font-family: Gadugi;
+    }
+
+    h1 {
+        color: whitesmoke;
+        font-family: 'Courier New';
+        font-weight: 800;
+        text-align: center;
+        margin: 30px 0px 30px 0;
+        text-align: center;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 800px;
+        margin: 0 auto;
+        background-color: #E6F0F5;
+        border-radius: 10px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    th {
+        background-color: #0360AB;
+        color: #FFFFFF;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F2F9FF;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #D5EAF7;
+    }
+</style>
+
+@if (Model != null && Model.Length > 0)
+{
+    <h1>Resultado da Pesquisa de Itens do Pedido</h1>
+
+    <table>
+        <tr>
+            <th>Número da Ata</th>
+            <th>Número (ID) do Pedido</th>
+            <th>Código (ID) da Entidade Solicitante</th>
+            <th>Data de Abertura</th>
+            <th>Número do Status do Pedido</th>
+            <th>Descrição do Status do Pedido</th>
+            <th>CEP da Entidade</th>
+            <th>Município da Entidade</th>
+            <th>Bairro da Entidade</th>
+            <th>Número do Logradouro da Entidade</th>
+            <th>Lista de Itens Solicitado</th>
+            <th>Valor Total do Pedido</th>
+            <th>Código (ID) da Entidade</th>
+            <th>Nome da Entidade</th>
+            <th>Código (ID) do Tipo de Entidade</th>
+            <th>Descrição do Tipo de Entidade</th>
+            <th>Código (ID) do Fornecedor do Produto </th>
+            <th>Contato Principal da Entidade</th>
+            <th>Contato Secundário da Entidade</th>
+            <th>Mensagem</th>
+            <th>Status</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.NumeroAta</td>
+                <td>@item.NumeroPedido</td>
+                <td>@item.CodEntidade</td>
+                <td>@item.DescricaoStatus</td>
+                <td>@item.DataAberturaPedido</td>
+                <td>@item.StatusPedido</td>
+                <td>@item.EntidadeCEP</td>
+                <td>@item.EntidadeMunicipio</td>
+                <td>@item.EntidadeBairro</td>
+                <td>@item.EntidadeNumeroLogradouro</td>
+                <td>@item.ListaItemPedido</td>
+                <td>@item.ValorTotalPedido</td>
+                <td>@item.CodEntidadePai</td>
+                <td>@item.NomeEntidadePai</td>
+                <td>@item.CodTipoEntidadePai</td>
+                <td>@item.NomeTipoEntidadePai</td>
+                <td>@item.CodProduto_Fornecedor</td>
+                <td>@item.EntidadeContatoPrimario</td>
+                <td>@item.EntidadeContatoSecundario</td>
+                <td>@item.Mensagem</td>
+                <td>@item.Status</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>Nenhum resultado encontrado.</p>
+}

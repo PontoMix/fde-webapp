@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Pesquisar Itens";
+}
+
+<!--ESTILO DOS FORMULÁRIOS-->
+<style>
+    body {
+        background-color: skyblue;
+        font-family: Gadugi;
+    }
+
+    .page_title {
+        color: whitesmoke;
+        font-family: 'Courier New';
+        font-weight: 800;
+        text-align: center;
+        margin: 30px 0px 30px 0;
+        text-align: center;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    #form_pesquisar_itens {
+        border: solid 10px;
+        border-color: #0360AB;
+        font-weight: 800;
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #59B0F9;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    div{
+        margin: 0 auto;
+    }
+
+    input {
+        margin: 20px 0px 30px 0px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .form-control {
+        border-radius: 5px;
+        border-color: #B3DFFD;
+    }
+
+    .btn-primary {
+        margin-top: 10px;
+        font-weight: 800;
+        width: 400px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: #AB221D;
+        border: solid 5px;
+        border-color: #89CFF0;
+    }
+</style>
+
+<h1 class="page_title">Pesquisar Itens</h1>
+
+<form id="form_pesquisar_itens" method="post" action="/Home/ProcessarPesquisaItens">
+    <div class="form-group">
+        <label for="numeroPedido">Número do Pedido:</label>
+        <input type="text" class="form-control" id="numeroPedido" name="numeroPedido" />
+    </div>
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
+</form>

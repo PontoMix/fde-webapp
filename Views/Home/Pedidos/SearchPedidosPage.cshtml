@@ -1,0 +1,123 @@
+﻿@{
+    ViewData["Title"] = "Pesquisar Pedido";
+}
+
+<!--ESTILO DOS FORMULÁRIOS-->
+<style>
+    body {
+        background-color: skyblue;
+        font-family: Gadugi;
+    }
+
+    .page_title {
+        color: whitesmoke;
+        font-family: 'Courier New';
+        font-weight: 800;
+        text-align: center;
+        margin: 30px 0px 30px 0;
+        text-align: center;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    #form_pesquisarPedidos {
+        border: solid 10px;
+        border-color: #0360AB;
+        font-weight: 800;
+        margin: 0 auto;
+        width: 800px;
+        height: 820px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #59B0F9;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    input {
+        margin: 20px 0px 30px 0px;
+        width: 800px;
+        height: 40px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .form-control {
+        border-radius: 5px;
+        border-color: #B3DFFD;
+    }
+
+    .btn-primary {
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 10px;
+        font-weight: 800;
+        width: 400px;
+        height: 80px;
+        border-radius: 5px;
+        background-color: #AB221D;
+        border: solid 5px;
+        border-color: #89CFF0;
+    }
+</style>
+
+
+<!--FORMULÁRIO DE PESQUISA DE PEDIDOS-->
+<h1 class="page_title" id="title_order_search">Pesquisar Pedidos</h1>
+
+<form id="form_pesquisarPedidos" method="post" action="/Home/ProcessarPesquisaPedidos">
+    <div class="form-group">
+        <label for="numeroAta">Número da Ata:</label>
+        <input type="text" class="form-control" id="numeroAta" name="numeroAta" placeholder="xx/xxxxx/xx/xx-xxx" maxlength="18" />
+    </div>
+    <div class="form-group">
+        <label for="numeroPedido">Número do Pedido:</label>
+        <input type="text" class="form-control" id="numeroPedido" name="NumeroPedido" />
+    </div>
+    <div class="form-group">
+        <label for="dataInicial">Data Inicial:</label>
+        <input type="datetime-local" class="form-control" id="dataInicial" name="DtInicial" />
+    </div>
+    <div class="form-group">
+        <label for="dataFinal">Data Final:</label>
+        <input type="datetime-local" class="form-control" id="dataFinal" name="DtFinal" />
+    </div>
+    <div class="form-group">
+        <label for="numeroOSOF">Número da Ordem de Fornecimento:</label>
+        <input type="text" class="form-control" id="numeroOSOF" name="NumeroOSOF" />
+    </div>
+    <div class="form-group">
+        <label for="SituacaoPedido">Consultar Situação do Pedido:</label>
+        <select class="form-control" id="SituacaoPedido" name="SituacaoPedido">
+            <option value="0">Default</option>
+            <option value="1">Ativo</option>
+            <option value="2">Cancelado</option>
+            <option value="3">Entrega Autorizada</option>
+            <option value="4">Saiu para a Entrega</option>
+            <option value="5">Entregue</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
+</form>
+
+
+<!--SCRIPTS PARA MANIPULAR OS FORMULÁRIOS E SEUS CAMPOS-->
+<script>
+
+    const input = document.querySelector('#numeroAta');
+
+    input.addEventListener('keypress', () => {
+
+        let inputlength = input.value.length
+
+        if (inputlength === 2 || inputlength === 8 || inputlength === 11) {
+            input.value += '/'
+        } else if (inputlength === 14) {
+            input.value += '-'
+        }
+    })
+
+</script>

@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Resultado da Pesquisa da Ordem de Fornecimento";
+}
+
+@model OrdensFornecimentoService.OrdemFornecimento[]
+
+
+<style>
+    body {
+        background-color: skyblue;
+        font-family: Gadugi;
+    }
+
+    h1 {
+        color: whitesmoke;
+        font-family: 'Courier New';
+        font-weight: 800;
+        text-align: center;
+        margin: 30px 0px 30px 0;
+        text-align: center;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 800px;
+        margin: 0 auto;
+        background-color: #E6F0F5;
+        border-radius: 10px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    th {
+        background-color: #0360AB;
+        color: #FFFFFF;
+    }
+
+    tr:nth-child(even) {
+        background-color: #F2F9FF;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #D5EAF7;
+    }
+</style>
+
+@if (Model != null && Model.Length > 0)
+{
+    <h1>Resultado da Pesquisa da Ordem de Fornecimento</h1>
+
+    <table>
+        <tr>
+            <th>Número da Ordem de Fornecimento</th>
+            <th>Data Assinatura da OF</th>
+            <th>Mensagem</th>
+
+        </tr>
+        @foreach (var ordemFornecimento in Model)
+        {
+            <tr>
+                <td>@ordemFornecimento.NumeroOSOF</td>
+                <td>@ordemFornecimento.DataAssinaturaOSOF</td>
+                <td>@ordemFornecimento.Confirmation</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>Nenhum resultado encontrado.</p>
+}
