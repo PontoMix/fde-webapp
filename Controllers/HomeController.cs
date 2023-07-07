@@ -48,9 +48,9 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
             _produtoService = produtoService;
             _notaFiscalService = notaFiscalService;
 
-            // Defina as chaves aqui ou carregue-as de alguma outra fonte
-            Chave1 = "7B27D5BD2E5819F2E8EDD6C7D02153D0E312672F71B16F36FA57154C04F23073C2E070BAA397AE147CFD58F0674496C090C716328963AB2795499D7B6F3DD156";
-            Chave2 = "5F1BE5CF6AA872808A9CEBEEF7E5EAD3C709094E6AAD285CEFC43D885E53492A2F127E54A4E78489CE05A8A3A2F9380F54C75E592C329E2C476604323386A0A8";
+            /****************************** COLOQUE AS CHAVES DE ACESSO AQUI PARA PODER UTILIZAR OS SERVIÇOS DISPONIBILIZADOS PELA FDE   ******************************/
+            Chave1 = "";
+            Chave2 = "";
         }
 
 
@@ -86,17 +86,17 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
             ViewBag.SituacaoPedido = SituacaoPedido;
             ViewBag.NumeroOSOF = NumeroOSOF;
 
-            // Adicione um ponto de depuração aqui
+            // Adicionando um ponto de depuração aqui
             System.Diagnostics.Debugger.Break();
 
-            // Verificar se o campo Número do Pedido está vazio
+            // Verificando se o campo Número do Pedido está vazio
             //int? numeroPedido = string.IsNullOrEmpty(NumeroPedido) ? null : int.Parse(NumeroPedido);
             int? numeroPedido = int.TryParse(NumeroPedido, out int parsedNumeroPedido) ? parsedNumeroPedido : null;
 
             int parsedNumeroPedidoValue = numeroPedido.HasValue ? numeroPedido.Value : 0;
 
 
-            // Verificar se os campos Data Inicial e Data Final estão vazios
+            // Verificando se os campos Data Inicial e Data Final estão vazios
             if (DtInicial == default && DtFinal == default)
             {
                 // Caso estejam vazios, definir Data Inicial como a data atual e Data Final como 365 dias a partir da data atual
@@ -104,10 +104,10 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
                 DtFinal = DtInicial.AddDays(365);
             }
 
-            // Verificar se o campo Número da Ordem de Fornecimento está vazio
+            // Verificando se o campo Número da Ordem de Fornecimento está vazio
             string numeroOSOF = string.IsNullOrEmpty(NumeroOSOF) ? string.Empty : NumeroOSOF;
 
-            // Verificar o valor selecionado no campo Código Entidade Pai
+            // Verificando o valor selecionado no campo Código Entidade Pai
             ConsultarSituacaoPedido statusPedido;
             switch (SituacaoPedido)
             {
@@ -137,12 +137,10 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
 
             string codEntidadePai = "";
 
-            // Chame o método RetornaPedidosAsync do web service
+            // Chamando o método RetornaPedidosAsync do web service
             PedidosService.Pedido[] pedidos = await _pedidoService.RetornaPedidosAsync(Chave1, Chave2, numeroAta, DtInicial, DtFinal, statusPedido, parsedNumeroPedidoValue, NumeroOSOF, codEntidadePai);
 
-            // Agora você tem a lista de pedidos como resultado (variável 'pedidos') e pode usá-la como desejar
-
-            return View("Pedidos/PedidosResult", pedidos); // Redireciona para uma visualização "PedidosResult" com os resultados da pesquisa de pedidos
+            return View("Pedidos/PedidosResult", pedidos); 
         }
 
         [HttpPost]
@@ -180,10 +178,9 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
         public async Task<IActionResult> ProcessarSearchAtas(string numeroAta, int numeroAno)
         {
 
-            // Chame o método RetornaAtasAsync do web service
+            // Chamando o método RetornaAtasAsync do web service
             AtaDados[] atas = await _ataService.RetornaAtasAsync(Chave1, Chave2, numeroAta, numeroAno);
 
-            // Agora você tem a lista de atas como resultado (variável 'atas') e pode usá-la como desejar
 
             ViewBag.NumeroAta = numeroAta;
             ViewBag.NumeroAno = numeroAno;
@@ -293,7 +290,7 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
                     statusPedido = AlterarSituacaoPedido.Entregue;
                     break;
                 default:
-                    statusPedido = AlterarSituacaoPedido.Default; // atribuir um valor padrão
+                    statusPedido = AlterarSituacaoPedido.Default; 
                     break;
             }
 
@@ -321,7 +318,7 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
                     statusPedido = AlterarSituacaoPedido.Entregue;
                     break;
                 default:
-                    statusPedido = AlterarSituacaoPedido.Default; // atribuir um valor padrão
+                    statusPedido = AlterarSituacaoPedido.Default; 
                     break;
             }
 
@@ -380,7 +377,7 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
                     statusOcorrenciaOpt = StatusOcorrencia.Pendente;
                     break;
                 default:
-                    statusOcorrenciaOpt = StatusOcorrencia.Default; // atribuir um valor padrão
+                    statusOcorrenciaOpt = StatusOcorrencia.Default; 
                     break;
             }
 
@@ -439,7 +436,7 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
                     SituacaoProdutoOpt = StatusProdutoItem.Inativo;
                     break;
                 default:
-                    SituacaoProdutoOpt = StatusProdutoItem.Default; // atribuir um valor padrão
+                    SituacaoProdutoOpt = StatusProdutoItem.Default; 
                     break;
             }
 
@@ -468,7 +465,7 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
                     StatusProdutoOpt = StatusProduto.Ativo;
                     break;
                 default:
-                    StatusProdutoOpt = StatusProduto.Default; // atribuir um valor padrão
+                    StatusProdutoOpt = StatusProduto.Default; 
                     break;
             }
 
@@ -512,29 +509,29 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> ProcessarUploadImagemProduto(string NumeroAta, string NumeroFDEItem, string NumeroItemFornecedor, string DescricaoImagem, IFormFile ImagemProduto, int FlPrincipal, int NumeroOrdem)
         {
-            // Verifique se um arquivo foi enviado
+            // Verificando se um arquivo foi enviado
             if (ImagemProduto != null && ImagemProduto.Length > 0)
             {
-                // Configure o tamanho máximo permitido para o arquivo (350 KB)
+                // Configurando o tamanho máximo permitido para o arquivo (350 KB)
                 const int maxSize = 350 * 1024;
 
-                // Verifique o tamanho do arquivo
+                // Verificando o tamanho do arquivo
                 if (ImagemProduto.Length > maxSize)
                 {
-                    // Retorne uma mensagem de erro se o tamanho do arquivo exceder o limite
+                    // Retornando uma mensagem de erro se o tamanho do arquivo exceder o limite
                     ModelState.AddModelError("ImagemProduto", "O tamanho máximo do arquivo é de 350 KB.");
                     return View("UploadImagens/showUploadImagemProdutoPage");
                 }
 
-                // Verifique o formato do arquivo
+                // Verificando o formato do arquivo
                 if (ImagemProduto.ContentType != "image/jpeg" && ImagemProduto.ContentType != "image/jpg" && ImagemProduto.ContentType != "image/png")
                 {
-                    // Retorne uma mensagem de erro se o formato do arquivo não for suportado
+                    // Retornando uma mensagem de erro se o formato do arquivo não for suportado
                     ModelState.AddModelError("ImagemProduto", "Formato de arquivo não suportado. Apenas arquivos JPG e PNG são permitidos.");
                     return View("UploadImagens/showUploadImagemProdutoPage");
                 }
 
-                // Crie um objeto de dados de imagem do produto
+                // Criando um objeto de dados de imagem do produto
                 ProdutosService.DadosImagemProduto dadosImagemProduto = new ProdutosService.DadosImagemProduto
                 {
                     NumeroAta = NumeroAta,
@@ -545,7 +542,7 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
                     NumeroOrdem = NumeroOrdem
                 };
 
-                // Crie um objeto RemoteFileInfoProduto e preencha-o com os valores necessários
+                // Criando um objeto RemoteFileInfoProduto e preencha-o com os valores necessários
                 ProdutosService.RemoteFileInfoProduto fileInfo = new ProdutosService.RemoteFileInfoProduto
                 {
                     Chave1 = Chave1,
@@ -555,10 +552,10 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
                     Stream = ImagemProduto.OpenReadStream()
                 };
 
-                // Chame o método de serviço para fazer upload da imagem
+                // Chamando o método de serviço para fazer upload da imagem
                 var confirmation = await _produtoService.UploadImagemProdutoAsync(fileInfo);
 
-                // Retorne a view de resultados com a confirmação
+                // Retornando a view de resultados com a confirmação
                 return View("UploadImagens/showUploadImagemProdutoResult", confirmation);
             }
 
@@ -579,7 +576,7 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
         {
             if (ArquivoXml != null && ArquivoXml.Length > 0)
             {
-                // Verifique o tamanho do arquivo (2MB)
+                // Verificando o tamanho do arquivo (2MB)
                 const int maxSize = 2 * 1024 * 1024;
                 if (ArquivoXml.Length > maxSize)
                 {
@@ -587,7 +584,7 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
                     return View("UploadNFeorSR_XMLorPDF/showUploadXML_NForSRPage");
                 }
 
-                // Verifique o formato do arquivo
+                // Verificando o formato do arquivo
                 if (ArquivoXml.ContentType != "text/xml")
                 {
                     ModelState.AddModelError("ArquivoXml", "Formato de arquivo não suportado. Apenas arquivos XML são permitidos.");
@@ -600,12 +597,9 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
                     await ArquivoXml.CopyToAsync(stream);
                     stream.Position = 0;
 
-                    // Preencha os parâmetros para chamada do serviço
                     var dadosNotaFiscal = new NotasFiscaisService.DadosNotaFiscal();
-                    // Preencha os outros parâmetros conforme necessário
 
                     var itemNfe = new NotasFiscaisService.ItemNFE();
-                    // Preencha os outros parâmetros conforme necessário
 
                     var fileInfo = new NotasFiscaisService.RemoteFileInfo
                     {
@@ -617,10 +611,10 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
                         Stream = stream
                     };
 
-                    // Chame o método de serviço para fazer o upload
+                    // Chamando o método de serviço para fazer o upload
                     var confirmation = await _notaFiscalService.UploadXmlNfeAsync(fileInfo);
 
-                    // Faça o processamento adicional conforme necessário
+                    // Fazendo o processamento adicional conforme necessário
 
                     return View("UploadNFeorSR_XMLorPDF/UploadedXML_NForSRResult");
                 }
@@ -642,17 +636,17 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> ProcessarUploadPDFNFeorSRPage(IFormFile pdfFile)
         {
-            // Verificar se o arquivo foi fornecido
+            // Verificando se o arquivo foi fornecido
             if (pdfFile != null && pdfFile.Length > 0)
             {
-                // Verificar o tamanho do arquivo
+                // Verificando o tamanho do arquivo
                 if (pdfFile.Length > 1048576) // 1MB em bytes
                 {
                     ModelState.AddModelError("pdfFile", "O arquivo deve ter no máximo 1MB.");
                     return View("UploadNFeorSR_XMLorPDF/showUploadPDF_NForSRPage");
                 }
 
-                // Verificar o formato do arquivo
+                // Verificando o formato do arquivo
                 if (pdfFile.ContentType != "application/pdf")
                 {
                     ModelState.AddModelError("pdfFile", "O arquivo deve estar no formato PDF.");
@@ -665,12 +659,12 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
                     await pdfFile.CopyToAsync(stream);
                     stream.Position = 0;
 
-                    // Preencha os parâmetros para chamada do serviço
+                    // Preenchendo os parâmetros para chamada do serviço
                     var dadosNotaFiscal = new NotasFiscaisService.DadosNotaFiscal();
-                    // Preencha os outros parâmetros conforme necessário
+                    // Preenchendo os outros parâmetros conforme necessário
                     var itemNfe = new NotasFiscaisService.ItemNFE();
 
-                    // Preencha os outros parâmetros conforme necessário
+                    // Preenchendo os outros parâmetros conforme necessário
 
                     var fileInfo = new NotasFiscaisService.RemoteFileInfo
                     {
@@ -682,10 +676,10 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
                         Stream = stream
                     };
 
-                    // Chame o método de serviço para fazer o upload
+                    // Chamando o método de serviço para fazer o upload
                     var confirmation = await _notaFiscalService.UploadPDFNfeAsync(fileInfo);
 
-                    // Faça o processamento adicional conforme necessário
+                    // Fazendo o processamento adicional conforme necessário
 
                     return View("UploadNFeorSR_XMLorPDF/UploadedPDF_NForSRResult");
                 }
