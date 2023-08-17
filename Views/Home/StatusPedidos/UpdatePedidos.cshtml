@@ -83,11 +83,14 @@
 
 <h1 class="page_title">Atualizar Status do Pedido</h1>
 <h1 class="page_title">(Informar baixas como um todo)</h1>
+
 <!--ATUALIZAR STATUS PEDIDO-->
 <form id="form_UpdatePedido" method="post" action="/Home/ProcessarUpdatePedido">
     <div class="form-group">
-        <label for="numeroPedido">Número do Pedido:</label>
-        <input type="text" class="form-control" id="numeroPedido" name="numeroPedido"/>
+        <!--<label for="numeroPedido">Número do Pedido:</label>-->
+        <label for="numerosPedido">Número do Pedido:</label>
+        <!--<input type="text" class="form-control" id="numeroPedido" name="numeroPedido"/>-->
+        <textarea class="form-control" id="numerosPedido" name="numerosPedido"></textarea>
     </div>
     <div class="form-group">
         <label for="SituacaoPedido">Alterar Situação do Pedido:</label>
@@ -98,7 +101,7 @@
             <option value="3">Entregue</option>
         </select>
     </div>
-    <button type="submit" class="btn btn-primary">Pesquisar</button>
+    <button type="submit" class="btn btn-primary">Atualizar Status</button>
 </form>
 
 

@@ -63,9 +63,9 @@
         @foreach (var ordemFornecimento in Model)
         {
             <tr>
-                <td>@ordemFornecimento.NumeroOSOF</td>
-                <td>@ordemFornecimento.DataAssinaturaOSOF</td>
-                <td>@ordemFornecimento.Confirmation</td>
+                <td>@(ordemFornecimento?.NumeroOSOF)</td>
+                <td>@(ordemFornecimento?.DataAssinaturaOSOF.ToString("yyyy-MM-dd HH:mm:ss") ?? "Data não disponível")</td>
+                <td>@(ordemFornecimento?.Confirmation)</td>
             </tr>
         }
     </table>

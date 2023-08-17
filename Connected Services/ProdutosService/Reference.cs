@@ -630,8 +630,7 @@ namespace ProdutosService
         {
             if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_IProdutos))
             {
-                return new System.ServiceModel.EndpointAddress("http://homologwsrededesup.fde.sp.gov.br/WebserviceRedeSup/WcfRedeSupService.Produ" +
-                        "tos.svc");
+                return new System.ServiceModel.EndpointAddress("http://wsredesuprimentos.fde.sp.gov.br/WcfRedeSupService.Produtos.svc");
             }
             throw new System.InvalidOperationException(string.Format("Não foi possível encontrar o ponto de extremidade com o nome \'{0}\'.", endpointConfiguration));
         }

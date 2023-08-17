@@ -451,8 +451,7 @@ namespace AtasService
         {
             if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_IAta))
             {
-                return new System.ServiceModel.EndpointAddress("http://homologwsrededesup.fde.sp.gov.br/WebserviceRedeSup/WcfRedeSupService.Atas." +
-                        "svc");
+                return new System.ServiceModel.EndpointAddress("http://wsredesuprimentos.fde.sp.gov.br/WcfRedeSupService.Atas.svc");
             }
             throw new System.InvalidOperationException(string.Format("Não foi possível encontrar o ponto de extremidade com o nome \'{0}\'.", endpointConfiguration));
         }

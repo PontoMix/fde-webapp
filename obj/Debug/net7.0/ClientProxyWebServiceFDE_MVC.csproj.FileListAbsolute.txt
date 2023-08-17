@@ -77,3 +77,14 @@ C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\D
 C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\Connected Services\OrdensFornecimentoService\ConnectedService.json
 C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\Connected Services\ProdutosService\ConnectedService.json
 C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\Connected Services\NotasFiscaisService\ConnectedService.json
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\Connected Services\AtasServiceProd\ConnectedService.json
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\EPPlus.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\EPPlus.Interfaces.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\EPPlus.System.Drawing.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\System.Drawing.Common.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
+C:\tools\visual studio\repos\ServiceClientFDE\ClientProxyWebServiceFDE_MVC\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll

@@ -1,4 +1,5 @@
-using AtasService;
+//using AtasService;
+using AtasServiceProd;
 using EntidadesService;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,9 +21,6 @@ builder.Services.AddScoped<IOcorrencia, OcorrenciaClient>();
 builder.Services.AddScoped<IOrdemFornecimento, OrdemFornecimentoClient>();
 builder.Services.AddScoped<IProdutos, ProdutosClient>();
 builder.Services.AddScoped<INotaFiscalXml, NotaFiscalXmlClient>();
-
-// Adicione o using necessário
-// Verifique se o namespace correto é ServiceReferenceAtas
 
 var app = builder.Build();
 

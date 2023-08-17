@@ -2,7 +2,7 @@
     ViewData["Title"] = "Resultado da Pesquisa de Itens do Pedido";
 }
 
-@model PedidosService.Pedido[]
+@model List<PedidosService.Pedido>
 
 
 <style>
@@ -21,12 +21,39 @@
         text-shadow: 2px 2px 4px #000000;
     }
 
+    #exportToExcel{
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    button {
+        text-align: center;
+        background-color: dodgerblue;
+        color: floralwhite;
+        font-weight: 800;
+        width: 300px;
+        height: 60px;
+        border: 4px solid black;
+        border-radius: 6px;
+    }
+
+    .table-container {
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    .principal {
+        width: 100%;
+        overflow-x: auto;
+    }
+
     table {
         border-collapse: collapse;
-        width: 800px;
-        margin: 0 auto;
+        width: 100%;
+        max-width: 800px;
         background-color: #E6F0F5;
         border-radius: 10px;
+        overflow-x: hidden;
     }
 
     th, td {
@@ -49,63 +76,132 @@
     }
 </style>
 
-@if (Model != null && Model.Length > 0)
+
+@if (Model != null && Model.Count > 0)
+
 {
+
+  <div id="exportToExcel">
+
+    <form>
+        <button type="button" onclick="exportarParaExcel()">Exportar para Excel</button>
+    </form>
+
+  </div>
+
     <h1>Resultado da Pesquisa de Itens do Pedido</h1>
 
-    <table>
-        <tr>
-            <th>Número da Ata</th>
-            <th>Número (ID) do Pedido</th>
-            <th>Código (ID) da Entidade Solicitante</th>
-            <th>Data de Abertura</th>
-            <th>Número do Status do Pedido</th>
-            <th>Descrição do Status do Pedido</th>
-            <th>CEP da Entidade</th>
-            <th>Município da Entidade</th>
-            <th>Bairro da Entidade</th>
-            <th>Número do Logradouro da Entidade</th>
-            <th>Lista de Itens Solicitado</th>
-            <th>Valor Total do Pedido</th>
-            <th>Código (ID) da Entidade</th>
-            <th>Nome da Entidade</th>
-            <th>Código (ID) do Tipo de Entidade</th>
-            <th>Descrição do Tipo de Entidade</th>
-            <th>Código (ID) do Fornecedor do Produto </th>
-            <th>Contato Principal da Entidade</th>
-            <th>Contato Secundário da Entidade</th>
-            <th>Mensagem</th>
-            <th>Status</th>
-        </tr>
-        @foreach (var item in Model)
-        {
+    <div class="principal table-container">
+
+        <table>
             <tr>
-                <td>@item.NumeroAta</td>
-                <td>@item.NumeroPedido</td>
-                <td>@item.CodEntidade</td>
-                <td>@item.DescricaoStatus</td>
-                <td>@item.DataAberturaPedido</td>
-                <td>@item.StatusPedido</td>
-                <td>@item.EntidadeCEP</td>
-                <td>@item.EntidadeMunicipio</td>
-                <td>@item.EntidadeBairro</td>
-                <td>@item.EntidadeNumeroLogradouro</td>
-                <td>@item.ListaItemPedido</td>
-                <td>@item.ValorTotalPedido</td>
-                <td>@item.CodEntidadePai</td>
-                <td>@item.NomeEntidadePai</td>
-                <td>@item.CodTipoEntidadePai</td>
-                <td>@item.NomeTipoEntidadePai</td>
-                <td>@item.CodProduto_Fornecedor</td>
-                <td>@item.EntidadeContatoPrimario</td>
-                <td>@item.EntidadeContatoSecundario</td>
-                <td>@item.Mensagem</td>
-                <td>@item.Status</td>
+                <th>Número da Ata</th>
+                <th>Número do Pedido</th>
+                <th>Data Abertura do Pedido</th>
+                <th>Código da Entidade</th>
+                <th>Número do Item na FDE</th>
+                <th>Número do Produto BEC</th>
+                <th>Número da tabela com Itens do Pedido</th>
+                <th>Município</th>
+                <th>Logradouro</th>
+                <th>Número do Logradouro</th>
+                <th>Bairro</th>
+                <th>CEP</th>
+                <th>Tipo de Embalagem</th>
+                <th>Quantidade</th>
+                <th>Valor Unitário</th>
+                <th>SKU do Produto</th>
+                <th>Natureza da Despesa (Núm. BEC)</th>
+                <th>Unidade de Fornecimento (Núm. BEC)</th>
+                <th>Número da OF na FDE</th>
+                <th>Número da OF</th>
+                <th>Status do Item</th>
+                <th>Descrição do Status do Item</th>
+                <th>Possui Ocorrência?</th>
+                <th>Mensagem</th>
+                <th>Status</th>
+                <th>Fornecedor autenticado?</th>
+                <th>Status Fornecedor</th>
             </tr>
-        }
-    </table>
+            @foreach (var item in Model)
+            {
+                foreach (var listItem in item.ListaItemPedido)
+                {
+                    <tr>
+                        <td>@item.NumeroAta</td>
+                        <td>@listItem.NumeroPedido</td>
+                        <td>@item.DataAberturaPedido</td>
+                        <td>@listItem.CodEntidade</td>
+                        <td>@listItem.NumeroFDEItem</td>
+                        <td>@listItem.NumeroProduto</td>
+                        <td>@listItem.NumeroIdPedidoItem</td>
+                        <td>@item.EntidadeMunicipio</td>
+                        <td>@item.EntidadeLogradouro</td>
+                        <td>@item.EntidadeNumeroLogradouro</td>
+                        <td>@item.EntidadeBairro</td>
+                        <td>@item.EntidadeCEP</td>
+                        <td>@listItem.TipoEmbalagem</td>
+                        <td>@listItem.QuantidadeItemPedido</td>
+                        <td>@listItem.ValorUnitarioItemPedido</td>
+                        <td>@listItem.CodProduto_Fornecedor</td>
+                        <td>@listItem.NaturezaDespesa</td>
+                        <td>@listItem.UnidadeFornecimento</td>
+                        <td>@listItem.NumeroFDEOSOF</td>
+                        <td>@listItem.NumeroOSOF</td>
+                        <td>@listItem.StatusItem</td>
+                        <td>@listItem.DescricaoStatusItem</td>
+                        <td>@listItem.PossuiOcorrencia</td>
+                        <td>@listItem.Mensagem</td>
+                        <td>@listItem.Status</td>
+                        <td>@item.Mensagem</td>
+                        <td>@item.Status</td>
+                    </tr>
+                }
+
+            }
+        </table>
+
+    </div>
+
+ 
 }
 else
 {
     <p>Nenhum resultado encontrado.</p>
 }
+
+<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+
+<script>
+function exportarParaExcel() {
+    // Obtenha a tabela HTML
+    var tabela = document.querySelector('table');
+
+    // Crie um novo objeto Workbook
+    var workbook = XLSX.utils.book_new();
+
+    // Crie uma nova planilha do Excel a partir da tabela HTML
+    var worksheet = XLSX.utils.table_to_sheet(tabela);
+
+    // Adicione a formatação personalizada à coluna O
+    var range = XLSX.utils.decode_range(worksheet['!ref']);
+    for (var i = range.s.r; i <= range.e.r; i++) {
+        var cellAddress = XLSX.utils.encode_cell({ r: i, c: 14 }); // Coluna O
+        if (worksheet[cellAddress]) {
+            var cellValue = worksheet[cellAddress].v;
+            if (typeof cellValue === 'number') {
+                worksheet[cellAddress].t = 'n';
+                worksheet[cellAddress].z = '0.00'; // Formato personalizado para exibir duas casas decimais
+                worksheet[cellAddress].v = cellValue / 100; // Divida por 100 para exibir a vírgula nas duas primeiras casas
+            }
+        }
+    }
+
+    // Adicione a planilha ao Workbook
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Pedidos');
+
+    // Salve o Workbook em um arquivo .xlsx
+        XLSX.writeFile(workbook, 'pedidos.xlsx');
+}
+</script>

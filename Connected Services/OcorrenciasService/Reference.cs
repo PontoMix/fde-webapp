@@ -445,8 +445,7 @@ namespace OcorrenciasService
         {
             if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_IOcorrencia))
             {
-                return new System.ServiceModel.EndpointAddress("http://homologwsrededesup.fde.sp.gov.br/WebserviceRedeSup/WcfRedeSupService.Ocorr" +
-                        "encias.svc");
+                return new System.ServiceModel.EndpointAddress("http://wsredesuprimentos.fde.sp.gov.br/WcfRedeSupService.Ocorrencias.svc");
             }
             throw new System.InvalidOperationException(string.Format("Não foi possível encontrar o ponto de extremidade com o nome \'{0}\'.", endpointConfiguration));
         }

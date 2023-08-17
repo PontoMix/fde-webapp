@@ -88,6 +88,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQZWRpZG9zXFBlZGlkb3NSZXN1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Pedidos/SearchPedidosItensPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQZWRpZG9zXFNlYXJjaFBlZGlkb3NJdGVuc1BhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/tools/visual studio/repos/ServiceClientFDE/ClientProxyWebServiceFDE_MVC/Views/Home/Pedidos/SearchPedidosPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQZWRpZG9zXFNlYXJjaFBlZGlkb3NQYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

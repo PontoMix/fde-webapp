@@ -1,7 +1,7 @@
 {
   "ExtendedData": {
     "inputs": [
-      "https://homologwsrededesup.fde.sp.gov.br/WebserviceRedeSup/WcfRedeSupService.Pedidos.svc?singleWsdl"
+      "https://wsredesuprimentos.fde.sp.gov.br/WcfRedeSupService.Pedidos.svc"
     ],
     "collectionTypes": [
       "System.Array",

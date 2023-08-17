@@ -784,8 +784,7 @@ namespace NotasFiscaisService
         {
             if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_INotaFiscalXml))
             {
-                return new System.ServiceModel.EndpointAddress("http://homologwsrededesup.fde.sp.gov.br/WebserviceRedeSup/WcfRedeSupService.NotaF" +
-                        "iscalXml.svc");
+                return new System.ServiceModel.EndpointAddress("http://wsredesuprimentos.fde.sp.gov.br/WcfRedeSupService.NotaFiscalXml.svc");
             }
             throw new System.InvalidOperationException(string.Format("Não foi possível encontrar o ponto de extremidade com o nome \'{0}\'.", endpointConfiguration));
         }

@@ -56,38 +56,46 @@
     <div class="table-container">
         <table>
             <tr>
-                <th>Código da Entidade</th>
+                <th>Código da Entidade na FDE</th>
                 <th>Nome da Entidade</th>
+                <th>Código Tipo da Entidade</th>
+                <th>Descrição do Tipo de Entidade</th>
+
                 <th>Telefone</th>
-                <th>Código da Entidade</th>
-                <th>Descrição do Tipo da Entidade</th>
                 <th>Município</th>
-                <th>Código da Entidade do Pai</th>
-                <th>Nome da Entidade do Pai</th>
-                <th>Código do Tipo da Entidade do Pai</th>
-                <th>Nome do Tipo da Entidade do Pai</th>
-                <th>Mensagem</th>
-                <th>Status</th>          
+                <th>Ano</th>
+
+                <th>Código da Entidade Pai</th>
+                <th>Nome da Entidade Pai</th>
+                <th>Código do Tipo da Entidade Pai</th>
+                <th>Nome do Tipo da Entidade Pai</th>
+                <th>Fornecedor Autenticado?</th>
+                <th>Status do Fornecedor</th>          
 
                 <!-- Adicione outras colunas conforme necessário -->
             </tr>
             @foreach (var entidade in Model)
             {
                 <tr>
+
                     <td>@entidade.CodEntidade</td>
                     <td>@entidade.NomeEntidade</td>
-                    <td>@entidade.Telefone</td>
                     <td>@entidade.CodTipoEntidade</td>
                     <td>@entidade.DescricaoTipoEntidade</td>
+
+                    <td>@entidade.Telefone</td>
                     <td>@entidade.Municipio</td>
+                    <td>@entidade.Ano</td>
+
                     <td>@entidade.CodEntidadePai</td>
                     <td>@entidade.NomeEntidadePai</td>
                     <td>@entidade.CodTipoEntidadePai</td>
                     <td>@entidade.NomeTipoEntidadePai</td>
+
+
                     <td>@entidade.Mensagem</td>
                     <td>@entidade.Status</td>
 
-                    <!-- Adicione outras colunas conforme necessário -->
                 </tr>
             }
         </table>

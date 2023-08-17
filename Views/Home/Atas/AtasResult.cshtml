@@ -2,7 +2,7 @@
     ViewData["Title"] = "Resultado da Pesquisa de Ata";
 }
 
-@model AtasService.AtaDados[]
+@model AtasServiceProd.AtaDados[]
 
 <style>
     body {
@@ -61,12 +61,6 @@
         <h5>Número do Ano: @ViewBag.NumeroAno</h5><br />
     </div>
 
-    <form id="form_pesquisa_itens" method="post" action="/Home/PesquisarItensAta">
-        <input type="hidden" name="numeroAta" value="@ViewBag.NumeroAta" />
-        <input type="hidden" name="numeroAno" value="@ViewBag.NumeroAno" />
-        <button type="submit" class="btn btn-primary" style="width: 25%;">Pesquisar Itens</button>
-    </form>
-
     <table>
         <tr>
             <th>Número da Ata</th>
@@ -76,9 +70,11 @@
             <th>Data Final Vigente</th>
             <th>Nome da Ata</th>
             <th>Descrição da Ata</th>
+            <th>Descrição do Status da Ata</th>
             <th>Status da Ata</th>
             <th>Mensagem</th>
-            <th>Descrição do Status da Ata</th>
+            <th>Status</th>
+
         </tr>
         @foreach (var ata in Model)
         {
@@ -91,8 +87,9 @@
                 <td>@ata.NomeAta</td>
                 <td>@ata.DescricaoAta</td>
                 <td>@ata.StatusAta</td>
-                <td>@ata.Mensagem</td>
                 <td>@ata.DescricaoStatusAta</td>
+                <td>@ata.Mensagem</td>
+                <td>@ata.Status</td>
             </tr>
         }
     </table>

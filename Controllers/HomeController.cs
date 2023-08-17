@@ -1,4 +1,4 @@
-﻿using AtasService;
+﻿using AtasServiceProd;
 using ClientProxyWebServiceFDE_MVC.Models;
 using EntidadesService;
 using OcorrenciasService;
@@ -11,13 +11,16 @@ using ProdutosService;
 using NotasFiscaisService;
 using static System.Net.Mime.MediaTypeNames;
 using System.Security.Principal;
+using OfficeOpenXml;
+using System.IO;
 
 namespace ClientProxyWebServiceFDE_MVC.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IAta _ataService;
+        //private readonly IAta _ataService;
+        private readonly IAta _ataServiceProd;
         private readonly IPedido _pedidoService;
         private readonly IEntidade _entidadeService;
         private readonly IOcorrencia _ocorrenciaService;
@@ -31,7 +34,8 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
 
 
         public HomeController(ILogger<HomeController> logger,
-            IAta ataService,
+            //IAta ataService,
+            IAta ataServiceProd,
             IPedido pedidoService,
             IEntidade entidadeService,
             IOcorrencia ocorrenciaService,
@@ -40,7 +44,8 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
             INotaFiscalXml notaFiscalService)
         {
             _logger = logger;
-            _ataService = ataService;
+            //_ataService = ataService;
+            _ataServiceProd = ataServiceProd;
             _pedidoService = pedidoService;
             _entidadeService = entidadeService;
             _ocorrenciaService = ocorrenciaService;
@@ -49,8 +54,8 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
             _notaFiscalService = notaFiscalService;
 
             /****************************** COLOQUE AS CHAVES DE ACESSO AQUI PARA PODER UTILIZAR OS SERVIÇOS DISPONIBILIZADOS PELA FDE   ******************************/
-            Chave1 = "";
-            Chave2 = "";
+            Chave1 = "7B27D5BD2E5819F2E8EDD6C7D02153D0E312672F71B16F36FA57154C04F23073C2E070BAA397AE147CFD58F0674496C090C716328963AB2795499D7B6F3DD156";
+            Chave2 = "5F1BE5CF6AA872808A9CEBEEF7E5EAD3C709094E6AAD285CEFC43D885E53492A2F127E54A4E78489CE05A8A3A2F9380F54C75E592C329E2C476604323386A0A8";
         }
 
 
@@ -86,9 +91,6 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
             ViewBag.SituacaoPedido = SituacaoPedido;
             ViewBag.NumeroOSOF = NumeroOSOF;
 
-            // Adicionando um ponto de depuração aqui
-            System.Diagnostics.Debugger.Break();
-
             // Verificando se o campo Número do Pedido está vazio
             //int? numeroPedido = string.IsNullOrEmpty(NumeroPedido) ? null : int.Parse(NumeroPedido);
             int? numeroPedido = int.TryParse(NumeroPedido, out int parsedNumeroPedido) ? parsedNumeroPedido : null;
@@ -99,9 +101,9 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
             // Verificando se os campos Data Inicial e Data Final estão vazios
             if (DtInicial == default && DtFinal == default)
             {
-                // Caso estejam vazios, definir Data Inicial como a data atual e Data Final como 365 dias a partir da data atual
-                DtInicial = DateTime.Now;
-                DtFinal = DtInicial.AddDays(365);
+                // Caso estejam vazios, definir Data Inicial como de 30 dias atrás e Data Final como no momento de pesquisa
+                DtInicial = DateTime.Now.AddDays(-30);
+                DtFinal = DateTime.Now;
             }
 
             // Verificando se o campo Número da Ordem de Fornecimento está vazio
@@ -143,25 +145,69 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
             return View("Pedidos/PedidosResult", pedidos); 
         }
 
-        [HttpPost]
-        public async Task<IActionResult> ProcessarItensPedidos(string NumeroAta, int NumeroPedido, string NumeroOSOF, string CodEntidadePai, PedidosService.ConsultarSituacaoPedido SituacaoPedido, DateTime DtInicial, DateTime DtFinal)
-        {
-            ViewBag.NumeroAta = NumeroAta;
-            ViewBag.NumeroPedido = NumeroPedido;
-            ViewBag.NumeroOSOF = NumeroOSOF;
-            ViewBag.DtInicial = DtInicial;
-            ViewBag.DtFinal = DtFinal;
-            ViewBag.SituacaoPedido = SituacaoPedido;
-            ViewBag.CodEntidadePai = CodEntidadePai;
 
-            if (string.IsNullOrEmpty(NumeroAta) || NumeroPedido == 0)
+
+        //****************************************   PESQUISA ITENS DE PEDIDOS   ****************************************
+
+        public IActionResult showSearchPedidosItens()
+        {
+            return View("Pedidos/SearchPedidosItensPage");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ProcessarItensPedidos(string numeroAta, string NumeroPedido, string NumeroOSOF, string CodEntidadePai, PedidosService.ConsultarSituacaoPedido SituacaoPedido, DateTime DtInicial, DateTime DtFinal)
+        {
+            if (DtInicial == default && DtFinal == default)
             {
-                ModelState.AddModelError("", "Os campos Número da Ata e Número do Pedido devem ser preenchidos.");
-                return View("Pedidos/ItensPedidosResult");
+                DtInicial = DateTime.Now.AddDays(-30);
+                DtFinal = DateTime.Now;
             }
 
-            Pedido[] itensPedido = await _pedidoService.RetornaPedidosItensAsync(Chave1, Chave2, NumeroAta, DtInicial, DtFinal, SituacaoPedido, NumeroPedido, NumeroOSOF, CodEntidadePai);
-            return View("Pedidos/ItensPedidosResult", itensPedido);
+            string numeroOSOF = string.IsNullOrEmpty(NumeroOSOF) ? null : NumeroOSOF;
+            string codEntidadePai = string.IsNullOrEmpty(CodEntidadePai) ? null : CodEntidadePai;
+
+            ConsultarSituacaoPedido statusPedido;
+            switch (SituacaoPedido)
+            {
+                case PedidosService.ConsultarSituacaoPedido.Default:
+                    statusPedido = ConsultarSituacaoPedido.Default;
+                    break;
+                case PedidosService.ConsultarSituacaoPedido.Ativo:
+                    statusPedido = ConsultarSituacaoPedido.Ativo;
+                    break;
+                case PedidosService.ConsultarSituacaoPedido.Cancelado:
+                    statusPedido = ConsultarSituacaoPedido.Cancelado;
+                    break;
+                case PedidosService.ConsultarSituacaoPedido.EntregaAutorizada:
+                    statusPedido = ConsultarSituacaoPedido.EntregaAutorizada;
+                    break;
+                case PedidosService.ConsultarSituacaoPedido.SaiuParaEntrega:
+                    statusPedido = ConsultarSituacaoPedido.SaiuParaEntrega;
+                    break;
+                case PedidosService.ConsultarSituacaoPedido.Entregue:
+                    statusPedido = ConsultarSituacaoPedido.Entregue;
+                    break;
+                default:
+                    statusPedido = ConsultarSituacaoPedido.Default;
+                    break;
+            }
+
+            string[] pedidos = NumeroPedido.Split(',');
+
+            List<List<Pedido>> itensPedidosList = new List<List<Pedido>>();
+
+            foreach (var pedido in pedidos)
+            {
+                if (int.TryParse(pedido, out int numeroPedido))
+                {
+                    List<Pedido> itensPedido = (await _pedidoService.RetornaPedidosItensAsync(Chave1, Chave2, numeroAta, DtInicial, DtFinal, statusPedido, numeroPedido, NumeroOSOF, CodEntidadePai)).ToList();
+                    itensPedidosList.Add(itensPedido);
+                }
+            }
+
+            List<Pedido> todosOsPedidos = itensPedidosList.SelectMany(x => x).ToList();
+
+            return View("Pedidos/ItensPedidosResult", todosOsPedidos);
         }
 
 
@@ -178,9 +224,11 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
         public async Task<IActionResult> ProcessarSearchAtas(string numeroAta, int numeroAno)
         {
 
-            // Chamando o método RetornaAtasAsync do web service
-            AtaDados[] atas = await _ataService.RetornaAtasAsync(Chave1, Chave2, numeroAta, numeroAno);
+            // Adicionando um breakpoint para fins de depuração
+            // Debugger.Break();
 
+            // Chamando o método RetornaAtasAsync do web service
+            AtaDados[] atas = await _ataServiceProd.RetornaAtasAsync(Chave1, Chave2, numeroAta, numeroAno);
 
             ViewBag.NumeroAta = numeroAta;
             ViewBag.NumeroAno = numeroAno;
@@ -201,7 +249,7 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
                 return View("Atas/ItensAtasResult");
             }
 
-            ItemAta[] itensAta = await _ataService.RetornaItensAtaAsync(Chave1, Chave2, numeroAta, numeroAno);
+            ItemAta[] itensAta = await _ataServiceProd.RetornaItensAtaAsync(Chave1, Chave2, numeroAta, numeroAno);
 
             return View("Atas/ItensAtasResult", itensAta);
         }
@@ -262,7 +310,7 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
 
 
 
-        /***********************************************   ATUALIZAÇÃO DE PEDIDO  ***********************************************/
+        /***********************************************   ATUALIZAÇÃO DO STATUS DO PEDIDO  ***********************************************/
 
         public IActionResult showUpdatePedido()
 
@@ -271,31 +319,43 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> ProcessarUpdatePedido(int numeroPedido, AlterarSituacaoPedido SituacaoPedido) {
+        /*public async Task<IActionResult> ProcessarUpdatePedido(int numeroPedido, AlterarSituacaoPedido SituacaoPedido) {*/
+        public async Task<IActionResult> ProcessarUpdatePedido(string numerosPedido, AlterarSituacaoPedido SituacaoPedido) { 
 
 
-            AlterarSituacaoPedido statusPedido;
-            switch (SituacaoPedido)
+            var numeroPedidosArray = numerosPedido.Split(',');
+
+            foreach (var numeroPedidoStr in numeroPedidosArray)
             {
-                case PedidosService.AlterarSituacaoPedido.Default:
-                    statusPedido = AlterarSituacaoPedido.Default;
-                    break;
-                case PedidosService.AlterarSituacaoPedido.EntregaAutorizada:
-                    statusPedido = AlterarSituacaoPedido.EntregaAutorizada;
-                    break;
-                case PedidosService.AlterarSituacaoPedido.SaiuParaEntrega:
-                    statusPedido = AlterarSituacaoPedido.SaiuParaEntrega;
-                    break;
-                case PedidosService.AlterarSituacaoPedido.Entregue:
-                    statusPedido = AlterarSituacaoPedido.Entregue;
-                    break;
-                default:
-                    statusPedido = AlterarSituacaoPedido.Default; 
-                    break;
-            }
+                if (int.TryParse(numeroPedidoStr.Trim(), out int numeroPedido))
+                {
+                    AlterarSituacaoPedido statusPedido;
+                    switch (SituacaoPedido)
+                    {
+                        case PedidosService.AlterarSituacaoPedido.Default:
+                            statusPedido = AlterarSituacaoPedido.Default;
+                            break;
+                        case PedidosService.AlterarSituacaoPedido.EntregaAutorizada:
+                            statusPedido = AlterarSituacaoPedido.EntregaAutorizada;
+                            break;
+                        case PedidosService.AlterarSituacaoPedido.SaiuParaEntrega:
+                            statusPedido = AlterarSituacaoPedido.SaiuParaEntrega;
+                            break;
+                        case PedidosService.AlterarSituacaoPedido.Entregue:
+                            statusPedido = AlterarSituacaoPedido.Entregue;
+                            break;
+                        default:
+                            statusPedido = AlterarSituacaoPedido.Default;
+                            break;
+                    }
 
-            Confirmations confirmations = await _pedidoService.AtualizaStatusPedidoAsync(Chave1, Chave2, numeroPedido, statusPedido);
-            return View("StatusPedidos/UpdatedPedidoStatusResult", confirmations);
+                    Confirmations confirmations = await _pedidoService.AtualizaStatusPedidoAsync(Chave1, Chave2, numeroPedido, statusPedido);
+                    return View("StatusPedidos/UpdatedPedidoStatusResult", confirmations);
+
+                }
+
+            }
+            return View("StatusPedidos/UpdatedPedidoStatusResult");
         }
 
         [HttpPost]
@@ -397,6 +457,15 @@ namespace ClientProxyWebServiceFDE_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> ProcessarPesquisaOrdemFornecimento(string NumeroOSOF, DateTime DtInicial, DateTime DtFinal)
         {
+
+            // Verificando se os campos Data Inicial e Data Final estão vazios
+            if (DtInicial == default && DtFinal == default)
+            {
+                // Caso estejam vazios, definir Data Inicial como de 30 dias atrás e Data Final como no momento de pesquisa
+                DtInicial = DateTime.Now.AddDays(-30);
+                DtFinal = DateTime.Now;
+            }
+
             OrdemFornecimento[] ordemFornecimentos = await _ordemFornecimentoService.RetornaOrdemFornecimentosAsync(Chave1, Chave2, NumeroOSOF, DtFinal, DtInicial);
             return View("OrdensFornecimento/OrdensFornecimentoResult", ordemFornecimentos);
         }

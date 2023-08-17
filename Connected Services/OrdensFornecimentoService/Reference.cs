@@ -188,8 +188,7 @@ namespace OrdensFornecimentoService
         {
             if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_IOrdemFornecimento))
             {
-                return new System.ServiceModel.EndpointAddress("http://homologwsrededesup.fde.sp.gov.br/WebserviceRedeSup/WcfRedeSupService.Ordem" +
-                        "Fornecimento.svc");
+                return new System.ServiceModel.EndpointAddress("http://wsredesuprimentos.fde.sp.gov.br/WcfRedeSupService.OrdemFornecimento.svc");
             }
             throw new System.InvalidOperationException(string.Format("Não foi possível encontrar o ponto de extremidade com o nome \'{0}\'.", endpointConfiguration));
         }

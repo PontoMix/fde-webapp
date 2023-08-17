@@ -10,6 +10,14 @@
         font-family: Gadugi;
     }
 
+    #numberAta_Pedido_OSOFandSituation{
+        text-align: center;
+    }
+
+    h5{
+        font-weight: 800;
+    }
+
     h1{
         color: whitesmoke;
         font-family: 'Courier New';
@@ -20,6 +28,17 @@
         margin: 40px 0px 50px 0px;
         text-shadow: 2px 2px 4px #000000;
     }
+
+    button{
+        background-color:dodgerblue;
+        color: floralwhite;
+        font-weight: 800;
+        width: 300px;
+        height: 60px;
+        border: 1px solid black;
+        border-radius: 6px;
+    }
+
     .table-container {
         display: flex;
         justify-content: center;
@@ -55,24 +74,19 @@
 @if (Model != null && Model.Length > 0)
 {
     <div id="numberAta_Pedido_OSOFandSituation">
-        <h5>Número da Ata pesquisada: @ViewBag.NumeroAta</h5><br />
-        <h5>Número do Numero do Pedido pesquisado: @ViewBag.NumeroPedido</h5><br />
-        <h5>Número da Ordem de Fornecimento pesquisado: @ViewBag.NumeroOSOF</h5><br />
-        <h5>Situação do Pedido pesquisado: @ViewBag.SituacaoPedido</h5><br />
+
+        <h5>Número da Ata: @ViewBag.NumeroAta</h5><br />
+        <h5>Número do Numero do Pedido: @ViewBag.NumeroPedido</h5><br />
+        <h5>Número da Ordem de Fornecimento: @ViewBag.NumeroOSOF</h5><br />
+        <h5>Situação do Pedido: @ViewBag.SituacaoPedido</h5><br />
+
+
+    <form>
+        <button type="button" onclick="exportarParaExcel()">Exportar para Excel</button>
+    </form>
+
     </div>
 
-
-    <form id="form_pesquisa_itens_pedido" method="post" action="/Home/ProcessarItensPedidos">
-        <input type="hidden" name="NumeroAta" value="@ViewBag.NumeroAta" />
-        <input type="hidden" name="NumeroPedido" value="@ViewBag.NumeroPedido" />
-        <input type="hidden" name="NumeroOSOF" value="@ViewBag.NumeroOSOF" />
-        <input type="hidden" name="DtInicial" value="@ViewBag.DtInicial" />
-        <input type="hidden" name="DtFinal" value="@ViewBag.DtFinal" />
-        <input type="hidden" name="SituacaoPedido" value="@ViewBag.SituacaoPedido" />
-        <input type="hidden" name="CodEntidadePai" value="@ViewBag.CodEntidadePai" />
-
-        <button type="submit" class="btn btn-primary">Pesquisar Itens do Pedido</button>
-    </form>
 
     <h1 id="title_search_result">Resultado da Pesquisa de Pedidos</h1>
 
@@ -82,11 +96,11 @@
                 <th>Número do Pedido</th>
                 <th>Número da Ata</th>
                 <th>Data de Abertura Pedido</th>
-                <th>Município da Entidade</th>
-                <th>Logradouro da Entidade</th>
-                <th>Número de Logradouro da Entidade</th>
-                <th>Bairro da Entidade</th>
-                <th>Número de CEP da Entidade</th>
+                <th>Município</th>
+                <th>Logradouro</th>
+                <th>Número de Logradouro</th>
+                <th>Bairro</th>
+                <th>Número de CEP</th>
                 <th>Valor Total do Pedido</th>
                 <th>Status do Pedido</th>
                 <th>Descrição do Status</th>
@@ -94,8 +108,8 @@
                 <th>Nome da Entidade Gestora</th>
                 <th>Código do tipo da Entidade Gestora</th>
                 <th>Descrição do Tipo da entidade Gestora</th>
-                <th>Mensagem</th>
-                <th>Status</th>
+                <th>Fornecedor Autenticado?</th>
+                <th>Status Fornecedor</th>
 
                 <!-- Adicione outras colunas conforme necessário -->
             </tr>
@@ -131,3 +145,18 @@ else
 {
     <p>Nenhum resultado encontrado.</p>
 }
+
+
+<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+<script>
+    function exportarParaExcel() {
+        // Obtenha a tabela HTML
+        var tabela = document.querySelector('table');
+
+        // Crie uma nova planilha do Excel
+        var workbook = XLSX.utils.table_to_book(tabela);
+
+        // Salve a planilha em um arquivo .xlsx
+        XLSX.writeFile(workbook, 'pedidos.xlsx');
+    }
+</script>

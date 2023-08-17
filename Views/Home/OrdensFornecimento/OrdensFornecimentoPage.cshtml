@@ -74,7 +74,7 @@
 <form id="form_OF" method="post" action="/Home/ProcessarPesquisaOrdemFornecimento">
     <div class="form-group">
         <label for="NumeroOSOF">Número da Ordem de Fornecimento:</label>
-        <input type="text" class="form-control" id="NumeroOSOF" name="NumeroOSOF" />
+        <input type="text" class="form-control" id="NumeroOSOF" name="NumeroOSOF" maxlength="11"/>
     </div>
     <div class="form-group">
         <label for="DtInicial">Data Inicial:</label>
@@ -87,3 +87,20 @@
     <button type="submit" class="btn btn-primary">Pesquisar</button>
 </form>
 
+<!--SCRIPTS PARA MANIPULAR OS FORMULÁRIOS E SEUS CAMPOS-->
+<script>
+
+    const input = document.querySelector('#NumeroOSOF');
+
+    input.addEventListener('keypress', () => {
+
+        let inputlength = input.value.length
+
+        if (inputlength === 2 || inputlength === 8) {
+            input.value += '/'
+        } else if (inputlength === 14) {
+            input.value += '-'
+        }
+    })
+
+</script>
