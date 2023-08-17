@@ -19,7 +19,7 @@ jobs:
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '6.0.x'
+          dotnet-version: '7.x'
           include-prerelease: true
 
       - name: Build with dotnet
@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'webapp-fde-pontomix'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CBEC32780A4E42F7A1EFB643D68E3246 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_289BEFF0C24348FCB29C17C9D515426B }}
           package: .
