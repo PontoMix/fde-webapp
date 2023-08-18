@@ -11,8 +11,11 @@ O Web App FDE pode ser acessado pelo seguinte link:
 
 Dois tutoriais foram criados para auxiliar no uso da aplicação:
 
-1. [Tutorial Completo e Resumido - Web App FDE](Presente dentro da pasta: "C:\Users\Username\OneDrive - Ponto Mix Comercial e Serviços\Ponto Mix\Vendas\FDE 2023");
-2. [Tutorial de como fazer download dos Pedidos e Itens dos Pedidos - Web App FDE](Presente dentro da pasta: "C:\Users\Username\OneDrive - Ponto Mix Comercial e Serviços\Ponto Mix\Vendas\FDE 2023").
+1. [Tutorial Completo e Resumido - Web App FDE]
+     Presente dentro da pasta: "C:\Users\Username\OneDrive - Ponto Mix Comercial e Serviços\Ponto Mix\Vendas\FDE 2023";
+   
+2. [Tutorial de como fazer download dos Pedidos e Itens dos Pedidos - Web App FDE]
+     Presente dentro da pasta: "C:\Users\Username\OneDrive - Ponto Mix Comercial e Serviços\Ponto Mix\Vendas\FDE 2023".
 
 ## Observações
 
